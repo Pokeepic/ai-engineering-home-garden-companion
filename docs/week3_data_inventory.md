@@ -79,7 +79,7 @@ The PDFs remain personal local working copies with their notices intact. The pub
 - Record any later whitespace or editorial-text cleanup and compare before/after samples.
 - Preserve warnings and conditions. Exclude unsupported symbol-only claims unless their association can be verified.
 - Review source coverage and scope before admitting passages; S03 is supplementary, not a blanket expansion to community-garden or chemical advice.
-- Defer chunk-size selection, prepared JSONL export, embeddings and the executable V1 transformation pipeline to Parts B/C.
+- At the Part A checkpoint, preparation and pipeline execution were deferred. Parts B/C now prepare a selected-prose pilot; embeddings remain outside this lab. See the pipeline decisions for admission limits.
 
 No preparation comparison has yet been performed, so no method is claimed to be the best. The current Part A report is not a cleaned corpus or a completed answer dataset.
 
@@ -92,6 +92,6 @@ No preparation comparison has yet been performed, so no method is claimed to be 
 - [x] Layout/ingestion limitations recorded and a relevant Part B pathway selected.
 - [x] Notebook and metadata-only inventory/evidence prepared for the existing repository.
 - [ ] Run the same notebook in a connected Colab runtime if required for the course platform checkpoint. The user requested VS Code/local notebook work for this stage.
-- [ ] Complete Topic 3 Parts B and C separately.
+- [x] Complete Topic 3 Parts B and C locally for the selected-prose pilot; see [pipeline decisions](week3_pipeline_decisions.md). Colab execution remains pending.
 
 The repository can show completed local Part A ingestion/inspection, but cannot claim the Colab platform checkpoint or later pipeline work has been completed.

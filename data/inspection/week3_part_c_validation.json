@@ -1,0 +1,32 @@
+{
+  "stage": "week3-part-c",
+  "repeatability": [
+    {
+      "pathway": "documents",
+      "status": "PASS",
+      "source_count": 2,
+      "record_count": 5,
+      "prepared_sha256": "66f82bdf2112360c8f4f1f7e5aba86e63951280e6aa2bd067e4d8a6221181204",
+      "matching_fields": [
+        "sources",
+        "validation",
+        "source_output_mapping",
+        "configuration"
+      ],
+      "timestamp_comparison": "Excluded: run timestamps may differ"
+    }
+  ],
+  "failure_checks": [
+    {
+      "case": "missing_input",
+      "result": "PASS: stopped before output replacement"
+    },
+    {
+      "case": "changed_source_checksum",
+      "result": "PASS: stopped before output replacement"
+    }
+  ],
+  "part_b_output_match": true,
+  "execution_environment": "local Python",
+  "limitation": "Local repeatability smoke check, not cross-environment reproducibility or content correctness."
+}

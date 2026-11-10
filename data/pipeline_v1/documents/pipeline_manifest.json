@@ -1,0 +1,105 @@
+{
+  "pipeline_version": "plantpal-week3-v1",
+  "generated_at_utc": "2026-11-10T15:27:12.681899+00:00",
+  "execution_environment": "local Python",
+  "python_version": "3.12.14",
+  "configuration": {
+    "pipeline_version": "plantpal-week3-v1",
+    "admitted_pages": {
+      "S01": [
+        5,
+        10
+      ],
+      "S03": [
+        6
+      ]
+    },
+    "method": "paragraph-aware",
+    "target_characters": 500,
+    "overlap": 0,
+    "page_local": true,
+    "section_rules_version": "verified-nparks-2026-11-10-v1",
+    "parser_version": "6.10.0"
+  },
+  "data_type": "documents",
+  "sources": [
+    {
+      "source_id": "S01",
+      "path": "data/raw/introduction_to_indoor_gardening.pdf",
+      "sha256": "21d6ae22ac7f4bbebfa38225d1fb942d2210376a119d350146fc15888a573533",
+      "url": "https://isomer-user-content.by.gov.sg/316/5be81ffb-fd47-444d-ab81-bf46b869dd7b/introduction_to_indoor_gardening.pdf",
+      "title": "Introduction to Indoor Gardening"
+    },
+    {
+      "source_id": "S03",
+      "path": "data/raw/introduction_to_community_gardening.pdf",
+      "sha256": "33a4f05c6a55d110e2bcda45562c928b7edd440d750e214e1183717b30ab0096",
+      "url": "https://isomer-user-content.by.gov.sg/316/e9f8a03b-d2aa-4f29-b16a-0678ea9ca5a9/introduction%20to%20community%20gardening.pdf",
+      "title": "Introduction to Community Gardening"
+    }
+  ],
+  "inspection": [
+    {
+      "source_id": "S01",
+      "total_pages": 24,
+      "admitted_pages": [
+        5,
+        10
+      ],
+      "selected_raw_characters": [
+        638,
+        1000
+      ]
+    },
+    {
+      "source_id": "S03",
+      "total_pages": 20,
+      "admitted_pages": [
+        6
+      ],
+      "selected_raw_characters": [
+        402
+      ]
+    }
+  ],
+  "source_output_mapping": [
+    {
+      "source_id": "S01",
+      "source": "data/raw/introduction_to_indoor_gardening.pdf",
+      "output": "data/pipeline_v1/documents/prepared_text.jsonl",
+      "pages": [
+        5,
+        10
+      ],
+      "records": 4
+    },
+    {
+      "source_id": "S03",
+      "source": "data/raw/introduction_to_community_gardening.pdf",
+      "output": "data/pipeline_v1/documents/prepared_text.jsonl",
+      "pages": [
+        6
+      ],
+      "records": 1
+    }
+  ],
+  "validation": {
+    "output_count": 1,
+    "record_count": 5,
+    "output_bytes": 4766,
+    "output_sha256": "66f82bdf2112360c8f4f1f7e5aba86e63951280e6aa2bd067e4d8a6221181204",
+    "record_checks": "PASS"
+  },
+  "outputs": [
+    "data/pipeline_v1/documents/prepared_text.jsonl"
+  ],
+  "limitations": [
+    "Selected prose pilot, not a complete answer corpus",
+    "Manual source-specific section rules",
+    "S02 deferred",
+    "S03 p6 table not extracted",
+    "No retrieval or model evaluation"
+  ],
+  "access_rights": "Personal working copies only; no open redistribution licence established. Prepared text stays local.",
+  "source_version": "Pinned by source SHA-256; publication dates not verified."
+}

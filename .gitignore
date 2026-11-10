@@ -10,6 +10,9 @@ secrets*.json
 # Local data and model artifacts
 data/raw/
 data/processed/
+# Part C source-derived text stays local; execution metadata may be shared.
+data/pipeline_v1/**/*.jsonl
+data/pipeline_v1/**/*.tmp
 data/private/
 *.faiss
 *.sqlite

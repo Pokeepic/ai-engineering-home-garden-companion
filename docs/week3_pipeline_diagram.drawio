@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="PlantPal diagram generator">
+  <diagram id="plantpal-data-v1" name="Week 3 Pipeline">
+    <mxGraphModel dx="1600" dy="1530" grid="1" gridSize="10" page="1" pageWidth="1600" pageHeight="1530">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="PlantPal | Executed V1 Data Pipeline&#10;&#10;Week 3 Part C | 10 November 2026 | Expands Week 2 A5 sources/preparation for future A4 knowledge access" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e9f0f5;strokeColor=#658294;fontColor=#193b50;fontSize=28;align=left;verticalAlign=top;spacing=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="25" width="1520" height="120" />
+        </mxCell>
+        <mxCell id="source" value="SOURCE | Selected NParks PDFs&#10;&#10;S01: indoor gardening, pages 5 and 10&#10;S03: community gardening, page 6 prose" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e3f2e9;strokeColor=#658294;fontColor=#193b50;fontSize=23;align=left;verticalAlign=top;spacing=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="60" y="185" width="900" height="130" />
+        </mxCell>
+        <mxCell id="ingest" value="INGEST | Pin source identity&#10;&#10;Resolve exact files in data/raw/&#10;Check existence and expected SHA-256" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e3f2e9;strokeColor=#658294;fontColor=#193b50;fontSize=23;align=left;verticalAlign=top;spacing=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="60" y="360" width="900" height="130" />
+        </mxCell>
+        <mxCell id="e1" source="source" target="ingest" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#486c80;strokeWidth=2;dashed=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="inspect" value="INSPECT | Extract readable page text&#10;&#10;pypdf 6.10.0; preserve one-based page numbers&#10;Reject encrypted, missing or empty selected pages" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e3f2e9;strokeColor=#658294;fontColor=#193b50;fontSize=23;align=left;verticalAlign=top;spacing=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="60" y="535" width="900" height="130" />
+        </mxCell>
+        <mxCell id="e2" source="ingest" target="inspect" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#486c80;strokeWidth=2;dashed=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="prepare" value="PREPARE / STORE | Same method as Part B&#10;&#10;Verified cleanup and section boundaries&#10;Paragraph-aware: 500-char soft target; no overlap" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e3f2e9;strokeColor=#658294;fontColor=#193b50;fontSize=23;align=left;verticalAlign=top;spacing=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="60" y="710" width="900" height="130" />
+        </mxCell>
+        <mxCell id="e3" source="inspect" target="prepare" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#486c80;strokeWidth=2;dashed=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="validate" value="VALIDATE OUTPUT | Read back staged JSONL&#10;&#10;Check IDs, text, page spans and citation metadata&#10;Replace final output only after validation passes" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e5edf9;strokeColor=#658294;fontColor=#193b50;fontSize=23;align=left;verticalAlign=top;spacing=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="60" y="885" width="900" height="130" />
+        </mxCell>
+        <mxCell id="e4" source="prepare" target="validate" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#486c80;strokeWidth=2;dashed=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="lineage" value="RECORD LINEAGE | Save run manifest&#10;&#10;Source/output hashes, counts, mappings and settings&#10;Read back manifest and verify output fingerprint" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e5edf9;strokeColor=#658294;fontColor=#193b50;fontSize=23;align=left;verticalAlign=top;spacing=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="60" y="1060" width="900" height="130" />
+        </mxCell>
+        <mxCell id="e5" source="validate" target="lineage" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#486c80;strokeWidth=2;dashed=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="rerun" value="RERUN | Compare two pipeline executions&#10;&#10;PASS: same sources, output bytes/hash and mappings&#10;5 chunks; exact match with Part B output" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e5edf9;strokeColor=#658294;fontColor=#193b50;fontSize=23;align=left;verticalAlign=top;spacing=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="60" y="1235" width="900" height="130" />
+        </mxCell>
+        <mxCell id="e6" source="lineage" target="rerun" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#486c80;strokeWidth=2;dashed=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="fail1" value="FAILURE 1 | Missing input&#10;&#10;Stop with FileNotFoundError.&#10;Keep the last valid output.&#10;Restore the exact source file." style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0dc;strokeColor=#658294;fontColor=#193b50;fontSize=22;align=left;verticalAlign=top;spacing=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1040" y="360" width="500" height="145" />
+        </mxCell>
+        <mxCell id="f1" source="ingest" target="fail1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#ad632b;strokeWidth=2;dashed=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="fail2" value="FAILURE 2 | Changed checksum&#10;&#10;Stop before extraction/output replacement.&#10;Review the new document version;&#10;do not silently update its expected hash.&#10;Both failure responses tested: PASS." style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0dc;strokeColor=#658294;fontColor=#193b50;fontSize=22;align=left;verticalAlign=top;spacing=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1040" y="535" width="500" height="165" />
+        </mxCell>
+        <mxCell id="f2" source="ingest" target="fail2" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=block;strokeColor=#ad632b;strokeWidth=2;dashed=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="limits" value="COVERAGE | Preparation pilot&#10;&#10;S02 houseplant brochure deferred.&#10;S03 soil-ratio table not extracted.&#10;Manual section rules; max chunk 656 chars.&#10;No model or retrieval quality claim." style="rounded=1;whiteSpace=wrap;html=0;fillColor=#f0eafa;strokeColor=#658294;fontColor=#193b50;fontSize=22;align=left;verticalAlign=top;spacing=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1040" y="760" width="500" height="185" />
+        </mxCell>
+        <mxCell id="storage" value="STORAGE | Local text, public evidence&#10;&#10;Local: data/pipeline_v1/documents/&#10;prepared_text.jsonl (ignored)&#10;Public: pipeline_manifest.json&#10;and metadata-only validation evidence." style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e9f0f5;strokeColor=#658294;fontColor=#193b50;fontSize=22;align=left;verticalAlign=top;spacing=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1040" y="1000" width="500" height="195" />
+        </mxCell>
+        <mxCell id="future" value="Future A4: retrieval consumes page-tagged chunks | Batch ETL | Colab execution still pending&#10;&#10;" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e9f0f5;strokeColor=#658294;fontColor=#193b50;fontSize=23;align=left;verticalAlign=top;spacing=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="60" y="1430" width="1480" height="75" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -16,4 +16,8 @@ See [inspection report](inspection/week3_part_a_inspection.json) and [data inven
 
 [Comparison evidence](inspection/week3_part_b_comparison.json) records the two chunking methods. [Common manifest](week3_manifest.json) records two sources contributing to one prepared JSONL file, their hashes, admitted pages and processing limitations. Five chunks cover S01 pages 5/10 and extracted prose from S03 page 6. S02 is deferred; the S03 soil-ratio table is missing from extraction and is not reconstructed.
 
-Run all notebook cells to recreate `data/processed/prepared_text.jsonl` and the two local candidate JSONL files. These outputs contain source text and are ignored by Git. The public manifest references local files that will not exist in a fresh clone until regeneration. Metadata and code are public; source copies and extracted text are not redistributed. Part C remains pending.
+Run all notebook cells to recreate `data/processed/prepared_text.jsonl` and the two local candidate JSONL files. These outputs contain source text and are ignored by Git. The public manifest references local files that will not exist in a fresh clone until regeneration. Metadata and code are public; source copies and extracted text are not redistributed. Part C results are described below.
+
+## Part C Executable Pipeline
+
+Run All now executes the document pipeline twice from raw source files. The source-derived `data/pipeline_v1/documents/prepared_text.jsonl` stays local and ignored; the [execution manifest](pipeline_v1/documents/pipeline_manifest.json) and [validation evidence](inspection/week3_part_c_validation.json) are public metadata. Five chunks match Part B exactly. Two runs match on hashes, sizes, counts and mappings; missing-input/checksum tests preserve the prior valid output. See [pipeline decisions](../docs/week3_pipeline_decisions.md) for stage contracts and limitations. These are repeatability checks, not proof of accuracy or complete source coverage.
