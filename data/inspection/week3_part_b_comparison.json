@@ -1,0 +1,40 @@
+{
+  "pipeline_version": "plantpal-week3-part-b-v1",
+  "admitted_pages": {
+    "S01": [
+      5,
+      10
+    ],
+    "S03": [
+      6
+    ]
+  },
+  "comparison": [
+    {
+      "method": "fixed",
+      "chunks": 5,
+      "section_splits": 2,
+      "word_splits": 1,
+      "max_characters": 500,
+      "over_target_chunks": 0
+    },
+    {
+      "method": "paragraph-aware",
+      "chunks": 5,
+      "section_splits": 0,
+      "word_splits": 0,
+      "max_characters": 656,
+      "over_target_chunks": 1
+    }
+  ],
+  "selected_method": "paragraph-aware",
+  "validation": "JSONL round trip, unique IDs, page/source references, content spans and hashes passed",
+  "limitations": [
+    "Pilot only",
+    "Manual verified section boundaries",
+    "Soft character target",
+    "No model/retrieval evaluation",
+    "S02 deferred",
+    "S03 p6 table omitted"
+  ]
+}

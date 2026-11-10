@@ -1,0 +1,39 @@
+{
+  "pipeline_version": "plantpal-week3-part-b-v1",
+  "generated_at_utc": "2026-11-10T11:55:39.820519+00:00",
+  "records": [
+    {
+      "source_id": "S01",
+      "source_filename": "introduction_to_indoor_gardening.pdf",
+      "source_url": "https://isomer-user-content.by.gov.sg/316/5be81ffb-fd47-444d-ab81-bf46b869dd7b/introduction_to_indoor_gardening.pdf",
+      "source_title": "Introduction to Indoor Gardening",
+      "source_sha256": "21d6ae22ac7f4bbebfa38225d1fb942d2210376a119d350146fc15888a573533",
+      "prepared_output": "data/processed/prepared_text.jsonl",
+      "prepared_sha256": "66f82bdf2112360c8f4f1f7e5aba86e63951280e6aa2bd067e4d8a6221181204",
+      "processing": "verified-sections; paragraph-aware; target-char-500; overlap-0; page-local",
+      "admitted_pages": [
+        5,
+        10
+      ],
+      "record_count": 4,
+      "parser_version": "6.10.0",
+      "provenance_limitations": "Selected prose pilot; no redistribution licence established; raw and prepared files local only. S02 deferred. S03 p6 table absent. Hashes do not prove truth or permission."
+    },
+    {
+      "source_id": "S03",
+      "source_filename": "introduction_to_community_gardening.pdf",
+      "source_url": "https://isomer-user-content.by.gov.sg/316/e9f8a03b-d2aa-4f29-b16a-0678ea9ca5a9/introduction%20to%20community%20gardening.pdf",
+      "source_title": "Introduction to Community Gardening",
+      "source_sha256": "33a4f05c6a55d110e2bcda45562c928b7edd440d750e214e1183717b30ab0096",
+      "prepared_output": "data/processed/prepared_text.jsonl",
+      "prepared_sha256": "66f82bdf2112360c8f4f1f7e5aba86e63951280e6aa2bd067e4d8a6221181204",
+      "processing": "verified-sections; paragraph-aware; target-char-500; overlap-0; page-local",
+      "admitted_pages": [
+        6
+      ],
+      "record_count": 1,
+      "parser_version": "6.10.0",
+      "provenance_limitations": "Selected prose pilot; no redistribution licence established; raw and prepared files local only. S02 deferred. S03 p6 table absent. Hashes do not prove truth or permission."
+    }
+  ]
+}

@@ -74,10 +74,12 @@ The [ChatGPT system map](docs/week1_system_map.png) and [observation sheet](docs
 |---|---|---|---|
 | W1 | Project scope and repository; preserve group evidence | README, scope, observation sheet, system map | Prepared; group-evidence review and course-portal submission remain |
 | W2 | Requirements, evaluation criteria, and V1 architecture | [Requirements](docs/week2_requirements.md), [Evaluation criteria](docs/week2_evaluation_criteria.md), [Architecture diagram](docs/week2_architecture_v1.png), [Decisions and traceability](docs/week2_architecture_decisions.md) | Parts A-C documented; implementation and evaluation not started |
-| W3 | Part A: source selection, ingestion and inspection | [Notebook](notebooks/week3_pipeline.ipynb), [Data inventory](docs/week3_data_inventory.md), [Inspection evidence](data/inspection/week3_part_a_inspection.json) | Local execution verified; Colab checkpoint pending if required; Parts B/C pending |
+| W3 | Parts A/B: source inspection and document preparation | [Notebook](notebooks/week3_pipeline.ipynb), [Data inventory](docs/week3_data_inventory.md), [Inspection evidence](data/inspection/week3_part_a_inspection.json) | Parts A/B locally executed; Part C and Colab checkpoint pending |
 
 See [submission checklist](docs/submission_checklist.md) for remaining items. Do not commit credentials, personal conversation logs, or restricted documents.
 
-## Week 3 Part A
+## Week 3 Parts A and B
 
 Open [week3_pipeline.ipynb](notebooks/week3_pipeline.ipynb) in VS Code, select a Python kernel, and run all cells. Saved outputs are from a local Python run. The same notebook supports [opening in Colab](https://colab.research.google.com/github/Pokeepic/ai-engineering-plantpal/blob/main/notebooks/week3_pipeline.ipynb); no Colab execution is claimed. Raw PDFs remain ignored personal working copies. See the inventory for the rights review and observed extraction limitations.
+
+Part B compares fixed-size and paragraph-aware chunks on three verified pages from two sources. Both produce five chunks; fixed cuts split two sections and one word, while paragraph-aware cuts split neither. The selected method accepts one 656-character chunk above its 500-character target. See the [comparison evidence](data/inspection/week3_part_b_comparison.json) and [lineage manifest](data/week3_manifest.json). This is a preparation pilot, not the full answer corpus: the houseplant brochure remains deferred, and the community-guide soil table is not represented. Prepared text stays local in ignored `data/processed/`; run the notebook to regenerate it.
