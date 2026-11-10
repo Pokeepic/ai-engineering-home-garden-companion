@@ -1,0 +1,122 @@
+{
+  "stage": "week3-part-a-ingestion-and-inspection",
+  "execution_environment": "local Python",
+  "execution_timestamp_utc": "2026-11-10T06:49:38.119526+00:00",
+  "python_version": "3.12.14",
+  "pypdf_version": "6.10.0",
+  "raw_storage": "data/raw/ (ignored by Git)",
+  "records": [
+    {
+      "source_id": "S01",
+      "title": "Introduction to Indoor Gardening",
+      "filename": "introduction_to_indoor_gardening.pdf",
+      "url": "https://isomer-user-content.by.gov.sg/316/5be81ffb-fd47-444d-ab81-bf46b869dd7b/introduction_to_indoor_gardening.pdf",
+      "publisher": "National Parks Board (NParks)",
+      "source_sha256": "21d6ae22ac7f4bbebfa38225d1fb942d2210376a119d350146fc15888a573533",
+      "bytes": 3178940,
+      "pdf_pages": 24,
+      "characters_per_page": [
+        35,
+        0,
+        610,
+        789,
+        638,
+        664,
+        866,
+        1066,
+        953,
+        1000,
+        831,
+        943,
+        115,
+        705,
+        691,
+        653,
+        215,
+        350,
+        450,
+        227,
+        443,
+        374,
+        228,
+        427
+      ],
+      "empty_text_pages": [
+        2
+      ],
+      "pdf_creation_metadata": "D:20201013090212+08'00'",
+      "pdf_modification_metadata": "D:20201013090212+08'00'",
+      "sample_pages": [
+        5,
+        10
+      ]
+    },
+    {
+      "source_id": "S02",
+      "title": "Know 10 Houseplants",
+      "filename": "know_10_houseplants.pdf",
+      "url": "https://isomer-user-content.by.gov.sg/316/43fdd8a1-d385-428f-8cc2-d5b9b36f6a38/know%2010%20house%20plants.pdf",
+      "publisher": "National Parks Board (NParks)",
+      "source_sha256": "2208509f38b4c3400270c06b3c20a7c2ddd1812ce4433a2fe3e4dd0b9bd60120",
+      "bytes": 1720974,
+      "pdf_pages": 2,
+      "characters_per_page": [
+        2810,
+        6629
+      ],
+      "empty_text_pages": [],
+      "pdf_creation_metadata": "D:20230127115509Z",
+      "pdf_modification_metadata": "not supplied",
+      "sample_pages": [
+        1,
+        2
+      ]
+    },
+    {
+      "source_id": "S03",
+      "title": "Introduction to Community Gardening",
+      "filename": "introduction_to_community_gardening.pdf",
+      "url": "https://isomer-user-content.by.gov.sg/316/e9f8a03b-d2aa-4f29-b16a-0678ea9ca5a9/introduction%20to%20community%20gardening.pdf",
+      "publisher": "National Parks Board (NParks)",
+      "source_sha256": "33a4f05c6a55d110e2bcda45562c928b7edd440d750e214e1183717b30ab0096",
+      "bytes": 2450552,
+      "pdf_pages": 20,
+      "characters_per_page": [
+        38,
+        756,
+        474,
+        689,
+        926,
+        402,
+        66,
+        130,
+        408,
+        503,
+        628,
+        177,
+        273,
+        194,
+        260,
+        354,
+        431,
+        333,
+        312,
+        408
+      ],
+      "empty_text_pages": [],
+      "pdf_creation_metadata": "D:20220602102149+08'00'",
+      "pdf_modification_metadata": "D:20220602102149+08'00'",
+      "sample_pages": [
+        5,
+        12
+      ]
+    }
+  ],
+  "snapshot_checks": {
+    "S01_page_2_has_no_extractable_text": true,
+    "S01_page_10_contains_editorial_placeholder": true,
+    "S02_page_2_starts_with_bottom_right_profile": true,
+    "S03_page_12_has_plant_name_text": true
+  },
+  "note": "Metadata only. No cleaned corpus, model evaluation or Part B/C pipeline results."
+}

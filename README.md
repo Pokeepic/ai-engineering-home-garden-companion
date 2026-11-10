@@ -2,7 +2,7 @@
 
 > A planned AI assistant that answers beginner home-gardening questions using official gardening documents and verifiable citations.
 
-**Status:** Week 2 Parts A, B, and C documented. Objectives and progress statements revised on 26 October 2026. User-needs validation, corpus preparation, application implementation, and evaluation remain pending.
+**Status:** Week 3 Part A ingestion and inspection executed locally; VS Code/Jupyter notebook available. The AI application has not been implemented.
 
 ## Problem Statement
 
@@ -61,7 +61,7 @@ See the [full project scope](docs/week1_project_scope.md) for risks, controls, a
 docs/         Project scope, Week 1 group evidence, and submission checklist
 data/         Source documentation; local source copies are ignored
 src/          Future application code
-notebooks/    Future Colab notebooks
+notebooks/    VS Code/Jupyter notebooks (also Colab-compatible)
 evaluation/   Future evaluation questions and results
 prompts/      Future versioned prompts
 ```
@@ -74,5 +74,10 @@ The [ChatGPT system map](docs/week1_system_map.png) and [observation sheet](docs
 |---|---|---|---|
 | W1 | Project scope and repository; preserve group evidence | README, scope, observation sheet, system map | Prepared; group-evidence review and course-portal submission remain |
 | W2 | Requirements, evaluation criteria, and V1 architecture | [Requirements](docs/week2_requirements.md), [Evaluation criteria](docs/week2_evaluation_criteria.md), [Architecture diagram](docs/week2_architecture_v1.png), [Decisions and traceability](docs/week2_architecture_decisions.md) | Parts A-C documented; implementation and evaluation not started |
+| W3 | Part A: source selection, ingestion and inspection | [Notebook](notebooks/week3_pipeline.ipynb), [Data inventory](docs/week3_data_inventory.md), [Inspection evidence](data/inspection/week3_part_a_inspection.json) | Local execution verified; Colab checkpoint pending if required; Parts B/C pending |
 
 See [submission checklist](docs/submission_checklist.md) for remaining items. Do not commit credentials, personal conversation logs, or restricted documents.
+
+## Week 3 Part A
+
+Open [week3_pipeline.ipynb](notebooks/week3_pipeline.ipynb) in VS Code, select a Python kernel, and run all cells. Saved outputs are from a local Python run. The same notebook supports [opening in Colab](https://colab.research.google.com/github/Pokeepic/ai-engineering-plantpal/blob/main/notebooks/week3_pipeline.ipynb); no Colab execution is claimed. Raw PDFs remain ignored personal working copies. See the inventory for the rights review and observed extraction limitations.
