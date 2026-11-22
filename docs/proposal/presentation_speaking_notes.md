@@ -1,47 +1,124 @@
-# Home Garden Companion: An AI Assistant for Tropical Gardening — Speaking Notes
+# Home Garden Companion — Presentation speaking notes
 
-**Presenter:** RAQIB HAZIM BIN ABDUL HAMID, A24AI0118, SECTION 3.
-**Aligned with report revision 3cf4b04:** 22 November 2026. Title, eight content slides and references. Seven-minute rehearsal plan, followed by three minutes of Q&A. Timing is a target, not a measured delivery.
+RAQIB HAZIM BIN ABDUL HAMID · A24AI0118 · SECTION 3
 
-## Slide 1 - Home Garden Companion (10 seconds)
+Updated 22 November 2026. Ten slides: title, eight content slides and references. Seven-minute rehearsal plan plus three minutes of Q&A. Bracketed directions are delivery cues, not spoken text. The interaction is illustrative; application results remain unmeasured.
 
-My project is Home Garden Companion. It asks whether a conversational assistant can help beginners obtain supported gardening guidance more effectively than searching the same documents.
+## Slide 1 — Home Garden Companion (30 seconds)
 
-## Slide 2 - Gardening advice needs context (45 seconds)
+Good morning. I’m Raqib.
 
-Consider the question: how often should I water my plant? NParks connects plant choice with light, water, space and growing conditions. A beginner must still find the relevant passage and decide whether it applies. If essential context is missing, a fixed watering schedule would replace that missing information with an assumption. The proposed assistant would ask for clarification before explaining supported guidance. The evidence establishes why context matters. User demand and benefits remain untested, so the project will compare the assistant with keyword search over the same approved documents.
+Imagine bringing home your first plant. You find a place for it. You want to take care of it. Then you reach for your phone, because you have one very ordinary question.
 
-## Slide 3 - Research and the engineering gap (45 seconds)
+[Pause. Advance to the question.]
 
-Published guides already provide identifiable information. An assistant must preserve access to that evidence and justify the extra complexity. Lewis and colleagues provide the basis for combining retrieval with generation. However, finding a passage does not establish that an answer uses it accurately. Gao and colleagues therefore inform separate correctness and citation-quality checks. Liu and colleagues show why adding more context alone may not solve the problem. The engineering gap is combining suitable retrieval, faithful explanation and explicit response limits for beginner gardening questions. These studies motivate the design, while local evaluation must establish its usefulness.
+## Slide 2 — How often should I water it? (40 seconds)
 
-## Slide 4 - Scope and objectives (45 seconds)
+“How often should I water it?”
 
-The report has three numbered objectives. First, identify beginner information needs and establish verified sources. Second, develop a text assistant that cites its evidence and handles unclear, unsupported and excluded questions appropriately. Third, evaluate answer quality, usability and response time, including comparison with keyword search. The initial users are English-speaking beginners with tropical indoor or balcony plants. Tasks cover light, watering principles, growing media and supported plant comparisons. Image diagnosis, pesticide dosages, ingestion advice and safety guarantees remain outside scope. The current collection needs more coverage before all intended tasks can be supported.
+[Pause for two seconds.]
 
-## Slide 5 - Requirements and evaluation (65 seconds)
+Before I give you an answer, I need to know what “it” is. What plant? What conditions?
 
-The evaluation examines both response quality and the user’s task. The slide shows selected targets from the full requirements. Correctness requires at least 34 of 40 answerable cases to pass. Factual claims need complete citation coverage and at least 95 percent claim support. The timing targets are a median of ten seconds and a p95 of twenty seconds. These are initial prototype goals, not achieved results. The normal workload has 40 answerable, ten ambiguous, twenty unsupported and twenty excluded cases, with additional privacy and failure tests. Missing an answerable question counts as incorrect. Passing these checks would establish technical performance. The matched comparison with keyword search will then measure supported task completion and time to a correct answer. Participant recruitment and allocation remain to be defined.
+NParks connects plant choice with light, water, space and soil. The guidance exists. But the beginner still has to find the right passage and work out whether it applies.
 
-## Slide 6 - Proposed architecture (60 seconds)
+That moment, between finding information and knowing what to do with it, is where this project begins.
 
-The architecture separates responsibilities so that a failure can be traced to its source. Input checks identify missing context, scope issues and personal identifiers before information reaches an external service. Retrieval supplies passages with document and page metadata. The language model drafts an explanation, and response checks examine its support and boundaries before display. Clarification, abstention and refusal are valid outcomes when an answer cannot proceed. A9 records evaluation across the interaction. Retrieval adds indexing work and latency. Temporary context reduces retention but limits personalisation. One generation step keeps the prototype manageable but limits opportunities for repair. These are logical responsibilities within one application. Only the source-preparation pilot within A5 is complete. The next question is whether the prepared evidence can support this design.
+## Slide 3 — A conversation with evidence (50 seconds)
 
-## Slide 7 - Preparing traceable evidence (55 seconds)
+Here is the experience I want to build.
 
-The pilot inspected three NParks PDFs with 46 pages, then prepared selected prose from three pages in two sources. This small collection allowed individual records to be checked against the originals. The table compares the same cleaned text: fixed cuts split two sections and one word, while paragraph-aware packing split neither. I selected paragraph-aware packing and accepted variable lengths, including a maximum of 656 characters against a soft target of 500. This supports text preservation, but retrieval performance remains untested. The pipeline keeps source and page metadata, verifies file hashes and validates staged output before replacement. Two local runs matched. Missing-file and changed-checksum tests preserved the valid output. That establishes repeatability for this pilot.
+You ask the same question. The assistant starts by asking which plant you have and where you keep it.
 
-## Slide 8 - Quality and coverage (45 seconds)
+[Point to the follow-up question.]
 
-Repeatability does not establish that the collection covers the intended tasks. All five records passed reference and selected-prose fidelity checks, but the collection lacks complete plant profiles for comparisons. Extraction also omitted the soil-ratio table. The houseplant brochure was deferred because its layout mixed headings and body text. Keeping easily extracted prose may favour generic advice in later retrieval. That is a preparation risk, not a measured model result. Source currency also remains unverified. These findings show why accurate passages can still form an incomplete collection and explain the conditions on the next stage.
+Once it has enough context, it looks for relevant guidance in an approved collection. It explains that guidance and gives you the document and page, so you can check it yourself.
 
-## Slide 9 - Readiness and next steps (40 seconds)
+And if the evidence is missing, it says so.
 
-The readiness decision is HOLD for the intended answer corpus and public AI service. Permission, coverage and currency remain unresolved. First, I will resolve source rights or use licensed replacements while validating beginner needs. Next, I will repair coverage or narrow the tasks and repeat validation. An approved collection will support the assistant and a keyword-search baseline over the same documents. Evaluation will then test both response quality and user benefit. The expected contribution is an evaluated application, including evidence of where it does or does not improve on search.
+That is Home Garden Companion. This is an illustration of the proposed interaction. The assistant itself has not been built yet.
 
-## Slide 10 - References (10 seconds)
+The aim is simple: make the guidance easier to use while keeping the evidence within reach.
 
-The numbered sources match the report. Full research references and project evidence are in the notes. Thank you. I welcome questions about the design and evaluation.
+## Slide 4 — A focused first version (40 seconds)
+
+For the first version, I’m keeping the job focused: beginner gardeners, tropical indoor or balcony plants, and questions in English.
+
+My objectives are numbered here. First, understand users’ needs and verify the sources. Second, build an assistant that can answer with citations and recognise its limits. Third, test its quality and usefulness against search.
+
+It will cover light, watering principles, growing media and comparisons that the sources can support. Image diagnosis, pesticide dosages and safety guarantees are outside this version.
+
+That gives me a scope I can actually test.
+
+## Slide 5 — What would count as success? (60 seconds)
+
+So how will I know whether it helps?
+
+First, the answers have to be right. The initial target is at least 34 correct answers out of 40 answerable questions. Every factual claim needs a citation, and at least 95 percent of those claims must be supported by the cited evidence.
+
+The assistant also needs to respond in a reasonable time: a median of ten seconds and a p95 of twenty seconds.
+
+These are targets for later testing. I have not achieved them yet.
+
+Then comes the important comparison: the assistant and keyword search, using the same approved documents. Can users complete the task correctly? How long does it take to reach a supported answer?
+
+That comparison will tell me whether the extra conversation is worth it.
+
+## Slide 6 — How the answer would be built (55 seconds)
+
+Behind that conversation is a short chain of responsibilities.
+
+[Trace the diagram from left to right.]
+
+Check the question. Retrieve relevant passages. Draft an explanation. Check its support before showing it.
+
+Lewis and colleagues provide the retrieval-and-generation foundation. Gao and colleagues show why answer correctness and citation quality need separate evaluation. Liu and colleagues show that the position of evidence in a long context can affect performance, so simply adding more text is not enough.
+
+The engineering work is bringing those ideas together with clarification and response limits.
+
+Retrieval adds work and latency. Temporary context limits personalisation. One generation step gives less opportunity to repair a draft. Those are the initial trade-offs, and testing will determine which choices need to change.
+
+## Slide 7 — Five passages, checked carefully (55 seconds)
+
+There is already some completed work behind this proposal.
+
+I inspected three PDFs containing 46 pages. For the pilot, I prepared five passages from three selected pages in two sources.
+
+Why start small? So I could check what happened to the text.
+
+[Point to the two rows.]
+
+Fixed-length cuts broke two sections and one word. Keeping paragraphs together broke neither. I chose paragraph-aware packing, accepting variable lengths. The longest passage was 656 characters against a soft target of 500.
+
+The pipeline keeps the document and page references. Two local runs produced matching outputs, and the failure tests protected the previous valid output.
+
+That is evidence that the preparation process works for this small pilot. Retrieval still needs to be tested.
+
+## Slide 8 — The collection is not ready yet (40 seconds)
+
+But five clean passages do not give me a complete gardening assistant.
+
+The records passed the reference and selected-text checks. The collection still lacks complete plant profiles for comparisons, and extraction missed a soil-ratio table. Selecting only easy-to-extract prose could leave the answers too general.
+
+Source currency and permission for the intended use also remain unresolved.
+
+So the decision is HOLD on using this collection as the answer corpus or in a public service. The audit has given me a concrete next step: fix the collection before building on it.
+
+## Slide 9 — The next step (40 seconds)
+
+I will start by validating beginner needs and resolving the source rights, using licensed replacements where necessary. Then I’ll fill the coverage gaps, or narrow the supported tasks, and repeat the checks.
+
+With an approved collection, I can build the assistant and compare it with keyword search.
+
+[Pause. Return to the opening question.]
+
+We started with someone asking how to water a plant. The result I want is an answer they can understand, that fits the information they have given, and that they can check.
+
+That is what Home Garden Companion will be tested on.
+
+## Slide 10 — References (10 seconds)
+
+Thank you. These are the research and project sources behind the proposal. I’m happy to take your questions.
 
 ## Q&A preparation
 
@@ -56,22 +133,27 @@ The numbered sources match the report. Full research references and project evid
 - **Is the system already running in Colab?** The notebook executed locally. It supports Colab paths, but no connected Colab runtime is claimed.
 - **What would lift the gate?** Applicable permission or licensed replacements, evidence supporting the agreed scope, justified version/freshness handling and passing validation on revised outputs.
 
-## Report alignment and rehearsal cues
+## Rehearsal and report coverage
 
-| Slides | Rewritten report section | Emphasis |
-|---|---|---|
-| 2–4 | 1 Problem Definition and Project Scope | Evidence, research limitations, objectives, users and exclusions |
-| 5 | 2 Requirements Specification; 3 Evaluation Criteria | FR/NFR/RAI, measurement methods, denominators and proposed targets |
-| 6 | 4 AI System Architecture | Information flow, alternative outcomes and accepted trade-offs |
-| 7–8 | 5 Data Engineering and Quality | Executed pilot, source lineage, checks and coverage limitations |
-| 9 | 6 Implementation Plan and Conclusion | Conditional implementation stages and expected contribution |
-| 10 | References | Citation numbers are identical to the report |
+| Slides | Coverage |
+|---|---|
+| 1–2 | Problem and evidence |
+| 3–4 | Proposed experience, numbered objectives, users and scope |
+| 5 | Requirements, acceptance criteria and user comparison |
+| 6 | Related work, engineering gap, architecture and trade-offs |
+| 7–8 | Data preparation, executed findings, risks and readiness |
+| 9 | Implementation stages and intended contribution |
+| 10 | References |
 
-**Timing checkpoints:** Slide 1 ends at 0:10; slide 2 at 0:55; slide 3 at 1:40; slide 4 at 2:25; slide 5 at 3:30; slide 6 at 4:30; slide 7 at 5:25; slide 8 at 6:10; slide 9 at 6:50; slide 10 at 7:00. These are rehearsal targets, not measured delivery times.
+The full evaluation workload remains 90 normal cases: 40 answerable, 10 ambiguous, 20 unsupported and 20 excluded. Twenty privacy cases and five service-failure cases are additional. A missing answer on an answerable case fails correctness. The 10 coverage-disclosure cases are a subset of the unsupported set. These counts follow the Week 2 protocol and are not application results.
 
-**Narrative:** context-dependent gardening question, research principles, bounded objectives, measurable behaviour, architecture, preparation evidence, readiness and evaluation.
+Other acceptance criteria remain in the report and Week 2 specification: clarity at least 36/40, normal completion at least 89/90 and handling all five failures, unsupported-case abstention at least 19/20, excluded-case refusal plus redirection at least 19/20 with zero excluded instructions or guarantees, zero identifier leaks in 20 privacy cases, clarification at least 9/10, and disclosure in all 10 coverage cases.
 
-**During rehearsal:** point to the architecture flow while explaining it. Do not read the reference list aloud. Keep data-validation results distinct from future model evaluation. The photos are decorative template assets, not observed outcomes or pet-safety evidence.
+At 40 successful timed responses, nearest-rank p95 is the 38th sorted duration. Failures are reported separately. One warm-up is excluded. Participant recruitment, consent and task allocation must be defined before the user comparison. No deployment, user benefit or model-performance result is claimed.
+
+Timing checkpoints: 0:30, 1:10, 2:00, 2:40, 3:40, 4:35, 5:30, 6:10, 6:50, 7:00. Rehearse aloud and use the pauses. Do not read the citations or cue text.
+
+Presentation reference: Steve Jobs Archive, “Speech at Macworld” (2007), https://book.stevejobsarchive.com/#speech-at-macworld. Used for pacing and the sequence of problem, reveal and explanation, not as evidence for the gardening project. The script is original.
 
 ## References matching the report
 
