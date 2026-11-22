@@ -95,6 +95,6 @@ All five prepared chunks were audited. [Part A evidence](data/inspection/week4_p
 
 The final report and PDF are committed; **eLearning PDF upload remains pending**. Full source-derived text stays local. Colab execution and later application evaluation are not claimed.
 
-## Proposal draft
+## Proposal report and presentation
 
-The [proposal package](docs/proposal/README.md) contains the report PDF and editable Word version, the presentation PDF adapted from the supplied template, and seven-minute speaking notes with Q&A. It combines Topics 1–4 and distinguishes completed data preparation from planned application evaluation. Prepared for student review; course-portal submission remains pending.
+The [proposal package](docs/proposal/README.md) contains the current structured report PDF and editable Word version, the presentation PDF adapted from the supplied template, and seven-minute speaking notes with Q&A. It combines Topics 1–4 and distinguishes completed data preparation from planned application evaluation. Prepared for student review; course-portal submission remains pending.
