@@ -1,47 +1,47 @@
 # Home Garden Companion: An AI Assistant for Tropical Gardening — Speaking Notes
 
 **Presenter:** RAQIB HAZIM BIN ABDUL HAMID, A24AI0118, SECTION 3.
-**Finalised against the structured proposal report:** 22 November 2026. Ten slides: title, eight content slides, references. Planned timing totals 7 minutes, followed by 3 minutes of Q&A. Rehearse and adjust to your speaking pace; this is a timing plan, not a recorded rehearsal.
+**Updated against the rewritten proposal report:** 22 November 2026. Ten slides: title, eight content slides and references. Seven-minute timing plan, followed by three minutes of Q&A. Timing is a rehearsal target, not a measured delivery.
 
 ## Slide 1 - Home Garden Companion (10 seconds)
 
-My project is Home Garden Companion, an AI assistant for tropical gardening. I will explain its intended behaviour, the preparation work completed, and the conditions that must be resolved before downstream implementation.
+My project is Home Garden Companion, an AI assistant for tropical gardening. It investigates how to connect a beginner’s question with relevant, verifiable guidance.
 
-## Slide 2 - The problem (45 seconds)
+## Slide 2 - Gardening advice needs context (45 seconds)
 
-Beginner gardeners must connect information about light, water, growing media and available space. NParks identifies these environmental conditions as important when choosing and growing plants. Home Garden Companion proposes to help users ask questions in ordinary English and receive an explanation linked to source pages. The engineering problem is keeping that explanation connected to evidence and recognising when context is missing. I have not yet surveyed users, so I am not claiming demonstrated chatbot demand or better plant survival. Official guides already exist. The proposed value is easier access to supported information, which still needs evaluation.
+Consider the question: how often should I water my plant? An answer depends on the plant, light and growing medium. NParks presents these conditions together, but a reader still has to find the relevant guidance and apply it. Home Garden Companion would ask for essential missing context and explain supported guidance with source pages. The intended users are beginner indoor and balcony gardeners. I have not yet validated chatbot demand or improved plant survival. The proposal therefore treats easier access to information as a benefit to test. Research helps turn that problem into engineering choices.
 
-## Slide 3 - Research and engineering gap (45 seconds)
+## Slide 3 - Research shapes the design (45 seconds)
 
-Three research directions inform the design. Lewis and colleagues motivate combining retrieval with generation. Gao and colleagues show why citation quality needs its own evaluation. Liu and colleagues demonstrate that long-context use is not automatically reliable in their tasks. These findings support investigating retrieved evidence and checking claims, but they do not prove Home Garden Companion will work. My engineering gap is a bounded integration of source access, citations, clarification and coverage limits for beginner gardening. I will compare it with keyword search over the same approved collection rather than assume that adding a language model is an improvement.
+The research contributes three connected design principles. Lewis and colleagues combine document retrieval with language generation, motivating access to external evidence. Gao and colleagues evaluate citation quality separately from answer correctness, showing why a page reference also needs a claim-support check. Liu and colleagues find that relevant information’s position can affect long-context performance, motivating tests of context selection. Together, these studies support an assistant that retrieves evidence, checks how it is used and recognises its limits. The engineering gap is integrating those behaviours for beginner gardening. The project evaluates that integration against keyword search over the same approved collection.
 
 ## Slide 4 - Scope and objectives (45 seconds)
 
-O1 is to validate beginner information needs and establish a reviewed source collection. O2 is to develop a text assistant with citations and appropriate clarification, abstention and refusal. O3 is to evaluate its outcomes against a search baseline. The intended users are beginner tropical indoor or balcony gardeners. Supported topics are light, watering principles, growing media, space and plant comparisons where the documents support them. Image diagnosis, pesticide dosages, ingestion advice and safety guarantees are excluded. The scope also excludes automated watering and environmental sensing.
+These principles lead to three objectives. O1 validates beginner information needs and establishes reviewed source coverage. O2 develops the cited text assistant, including clarification, abstention and refusal. O3 evaluates correctness and usefulness against keyword search. The prototype supports English questions about light, watering principles, growing media and space. Plant comparisons require supporting profiles. It uses temporary conversation context without accounts or persistent profiles. Image diagnosis, pesticide dosages, ingestion advice, safety guarantees, automated watering and sensing are outside scope. These boundaries define what a successful response must do, which leads to the requirements and evaluation plan.
 
 ## Slide 5 - Requirements and evaluation (65 seconds)
 
-FR2 requires a document title, URL and one-based PDF page for factual claims. NFR2 proposes at least 34 correct answers out of 40 answerable questions, with results broken down across four topic groups. Citation completeness is 100%, and passage support must reach at least 95%. A real citation does not automatically support a claim. NFR1 proposes a median response time at most ten seconds and a p95 at most twenty seconds, measured from submission to complete response. These are initial prototype targets, not achieved results or user-validated guarantees. The normal workload has 90 cases: 40 answerable, 10 ambiguous, 20 unsupported and 20 excluded. Privacy and failure tests are separate. Missing answers stay in the relevant denominators. Correctness is checked against reference facts; support is checked claim by claim.
+The requirements translate that scope into measurable behaviour. FR2 requires a document title, URL and one-based PDF page for factual claims. NFR2 sets an initial target of 34 correct answers out of 40. RAI1 requires complete citation coverage and at least 95 percent claim support. Correctness and support are assessed separately against reference facts and cited passages. NFR1 targets a median of ten seconds and a p95 of twenty seconds. These are proposed acceptance targets. The normal workload contains 40 answerable, ten ambiguous, twenty unsupported and twenty excluded cases. Privacy and failure scenarios are additional tests. A missing answer to an answerable question counts as incorrect. Later, a matched user comparison with keyword search will measure supported task completion and time to a correct answer. The architecture must make these outcomes observable.
 
 ## Slide 6 - Proposed architecture (60 seconds)
 
-The question enters A2, then A3 checks scope, missing context and personal identifiers. A4 retrieves page-tagged evidence from A5. A6 drafts an explanation; A7 checks support and boundaries; A8 displays an answer, clarification, abstention or refusal. A9 evaluates these outcomes. Retrieval adds latency and indexing work, but allows claims to be traced to documents. Temporary context reduces stored personal data at the cost of personalisation. One generation step keeps the prototype simple but gives less opportunity for iterative repair. These are proposed responsibilities, not deployed services. Only source preparation in A5 has been implemented; neither retrieval quality nor model answers have been tested.
+The question enters the text interface. A3 checks scope, essential context and personal identifiers before external processing. A4 retrieves page-tagged evidence from A5. A6 drafts the explanation, A7 checks support and boundaries, and A8 displays the appropriate response. Missing context leads to clarification, insufficient evidence to abstention, and an excluded task to refusal. A9 evaluates these outcomes. Retrieval adds latency and indexing work, while preserving evidence access. Page metadata makes claims inspectable but still needs semantic support checks. Temporary context limits retention at the cost of personalisation. One generation step keeps the prototype manageable but offers less opportunity for repair. These are logical responsibilities within one small application. The completed work currently covers source preparation in A5, so I will next explain that evidence.
 
-## Slide 7 - Data pipeline (55 seconds)
+## Slide 7 - Preparing traceable evidence (55 seconds)
 
-Three NParks PDFs, totalling 46 pages, were inspected. The prepared pilot contains only three selected pages from two sources and five text chunks. I compared fixed character cuts with paragraph-aware packing on identical text. Both produced five chunks, but fixed cuts split two sections and one word. The selected method kept sections intact, accepting a 656-character chunk above the 500-character soft target. It preserves document and page information. The integrated pipeline rereads the originals, validates the export and records hashes and mappings. Two executions matched, and missing-input and checksum-change tests stopped without replacing the valid output. This proves a limited local repeatability result, not answer accuracy.
+I inspected three NParks PDFs containing 46 pages. The prepared pilot uses three selected pages from two sources and contains five chunks. On identical cleaned text, fixed character cuts split two verified sections and one word. Paragraph-aware packing split neither, so I selected it while accepting variable lengths. The longest chunk is 656 characters against a soft target of 500. Document titles, URLs and page numbers remain with the text. The pipeline rereads source files, checks their hashes, validates staged JSONL and records lineage before replacing output. Two local runs matched, and missing-file and changed-checksum tests preserved the valid output. These results establish preparation repeatability. The next question is whether the prepared collection is ready for its intended tasks.
 
-## Slide 8 - Quality findings (45 seconds)
+## Slide 8 - Quality and coverage (45 seconds)
 
-Topic 4 inspected all five available records. V1 source-reference checks and V2 selected-prose fidelity each passed five out of five. No exact-normalised duplicate texts were found. However, timeliness is not verified, the soil-ratio table was lost during extraction, and plant-profile comparisons are not supported. The profile brochure was deferred because its layout mixed heading and body order. This can bias later retrieval toward generic advice. It is a plausible preparation risk, not proven model unfairness. Passing reference and fidelity checks does not mean the whole intended knowledge domain is covered.
+The Week 4 audit checked all five prepared records. Source-reference and selected-prose fidelity checks each passed five out of five. However, the collection has no complete plant profiles for the intended comparisons, and extraction omitted the soil-ratio table. The profile brochure was deferred because its layout mixed headings and body text. Selecting easily extracted prose could therefore favour generic advice in later retrieval. That is an identified preparation risk, not a measured model outcome. Source currency also remains unverified. The audit connects successful technical checks to a broader decision about coverage and readiness.
 
-## Slide 9 - HOLD and next steps (40 seconds)
+## Slide 9 - Readiness and next steps (40 seconds)
 
-The gate is HOLD for promotion to the intended downstream answer corpus or public service. Permission for the intended use is unresolved, and coverage remains incomplete. The four stages are to resolve rights and source versions, repair coverage and revalidate, build the cited assistant, and evaluate it against keyword search. User-needs validation is also still required. The HOLD does not mean the coursework pipeline failed. It shows that I distinguish technical success from readiness for the intended use. No model accuracy, user benefit or production safety is claimed at this stage.
+The decision is HOLD for downstream corpus use because intended-use permission, task coverage and source currency remain unresolved. The next stages are to resolve rights or obtain licensed replacements and validate user needs, repair coverage and rerun checks, implement the cited assistant, then evaluate it against keyword search. The completed preparation and audit provide the foundation. The expected contribution is an evaluated application with traceable evidence. Its user benefit remains a question for the planned evaluation.
 
 ## Slide 10 - References (10 seconds)
 
-The report contains full research references and links to the project evidence. The slide design comes from the supplied template. I am ready to discuss the assumptions, limitations and next engineering decisions.
+The report and speaking notes contain the full references and project evidence. Thank you. I welcome questions about the design choices and evaluation plan.
 
 ## Q&A preparation
 
@@ -58,7 +58,7 @@ The report contains full research references and links to the project evidence. 
 
 ## Report alignment and rehearsal cues
 
-| Slides | Updated report section | Emphasis |
+| Slides | Rewritten report section | Emphasis |
 |---|---|---|
 | 2–4 | 1 Problem Definition and Project Scope | Evidence, research limitations, objectives, users and exclusions |
 | 5 | 2 Requirements Specification; 3 Evaluation Criteria | FR/NFR/RAI, measurement methods, denominators and proposed targets |
@@ -68,6 +68,8 @@ The report contains full research references and links to the project evidence. 
 | 10 | References | Citation numbers are identical to the report |
 
 **Timing checkpoints:** Slide 1 ends at 0:10; slide 2 at 0:55; slide 3 at 1:40; slide 4 at 2:25; slide 5 at 3:30; slide 6 at 4:30; slide 7 at 5:25; slide 8 at 6:10; slide 9 at 6:50; slide 10 at 7:00. These are rehearsal targets, not measured delivery times.
+
+**Narrative:** context-dependent gardening question, research principles, bounded objectives, measurable behaviour, architecture, preparation evidence, readiness and evaluation.
 
 **During rehearsal:** point to the architecture flow while explaining it. Do not read the reference list aloud. Keep data-validation results distinct from future model evaluation. The photos are decorative template assets, not observed outcomes or pet-safety evidence.
 

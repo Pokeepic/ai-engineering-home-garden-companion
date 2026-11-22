@@ -7,10 +7,10 @@ Updated 22 November 2026. The revised report connects the problem, research gap,
 - [Current proposal PDF](home_garden_companion_proposal_report.pdf): cover, contents, 14 main pages and two reference pages.
 - [Editable Word report](home_garden_companion_proposal_report.docx)
 - [Markdown report](home_garden_companion_proposal_report.md)
-- [Final presentation PDF](home_garden_companion_presentation.pdf): title, eight content slides and references, adapted from the supplied template.
+- [Final presentation PDF](home_garden_companion_presentation.pdf): title, eight content slides and references, adapted from the supplied template and aligned with the rewritten report. Includes an editable comparison table in the live deck.
 - [Seven-minute speaking notes and Q&A](presentation_speaking_notes.md)
 
-The presentation PDF is a visual copy of the reviewed slides; text is not selectable. The [editable presentation](https://chatgpt.com/space/page_7b24a4a3bf708191abc975e29286a001) is saved in the author's connected Spaces account, with speaker notes embedded. The public PDF is available here without that account.
+The presentation PDF is a visual copy of the reviewed slides; text is not selectable. The [editable presentation](https://chatgpt.com/space/page_7b24a4a3bf708191abc975e29286a001) is saved in the author's connected Spaces account, with the updated seven-minute script embedded in all ten slides. The public PDF is available here without that account.
 
 The report distinguishes executed preparation/audit results from future application targets. No deployed chatbot, user-study results or achieved model-evaluation targets are claimed. The downstream corpus-use HOLD remains documented. Review the wording and rehearse before submission. Course-portal submission is not completed by this repository upload.
 
