@@ -2,9 +2,9 @@
 
 RAQIB HAZIM BIN ABDUL HAMID · A24AI0118 · SECTION 3
 
-Updated 22 November 2026. The structured report below supersedes the first report draft.
+Updated 22 November 2026. The revised report connects the problem, research gap, requirements, architecture and evaluation in a continuous argument. It supersedes the first report draft.
 
-- [Current proposal PDF](home_garden_companion_proposal_report.pdf): cover, contents, 13 main pages and two reference pages.
+- [Current proposal PDF](home_garden_companion_proposal_report.pdf): cover, contents, 14 main pages and two reference pages.
 - [Editable Word report](home_garden_companion_proposal_report.docx)
 - [Markdown report](home_garden_companion_proposal_report.md)
 - [Final presentation PDF](home_garden_companion_presentation.pdf): title, eight content slides and references, adapted from the supplied template.
