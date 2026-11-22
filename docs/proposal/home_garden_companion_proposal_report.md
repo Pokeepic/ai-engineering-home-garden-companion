@@ -223,4 +223,4 @@ Home Garden Companion will be evaluated as a bounded, evidence-based alternative
 
 [14] Home Garden Companion project repository. Week 4 Data Quality & Bias Report, 22 November 2026. docs/week4_data_quality_report.md; data/inspection/week4_part_b_validation.json.
 
-Repository for [9]–[14]: https://github.com/Pokeepic/ai-engineering-plantpal . These are author-created project artifacts and execution evidence, not independent research studies.
+Repository for [9]–[14]: https://github.com/Pokeepic/ai-engineering-home-garden-companion . These are author-created project artifacts and execution evidence, not independent research studies.

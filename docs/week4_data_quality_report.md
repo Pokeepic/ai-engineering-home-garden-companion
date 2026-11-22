@@ -1,4 +1,4 @@
-# PlantPal - Data Quality & Bias Report
+# Home Garden Companion - Data Quality & Bias Report
 
 **Individual project | Topic 4 | Audit and finalisation: 22 November 2026**
 
@@ -6,9 +6,9 @@
 
 ## 1. Project and Data Overview
 
-PlantPal proposes document-grounded guidance for beginner tropical home gardeners. This audit examines data prerequisites for two Topic 2 requirements: **FR1**, supported light/water/media/space guidance and plant comparisons without invented care instructions; and **FR2**, truthful document-title, URL and one-based PDF-page citations for factual claims. No generated-answer compliance is measured.
+Home Garden Companion proposes document-grounded guidance for beginner tropical home gardeners. This audit examines data prerequisites for two Topic 2 requirements: **FR1**, supported light/water/media/space guidance and plant comparisons without invented care instructions; and **FR2**, truthful document-title, URL and one-based PDF-page citations for factual claims. No generated-answer compliance is measured.
 
-**Pathway A (PDF/TXT), Topic 3 Part C:** audit `data/pipeline_v1/documents/prepared_text.jsonl` against its matching `data/pipeline_v1/documents/pipeline_manifest.json`. Pipeline: `plantpal-week3-v1`; run: 10 November 2026, 15:27:12 UTC. Exact output fingerprint and evidence references appear in Appendix A.
+**Pathway A (PDF/TXT), Topic 3 Part C:** audit `data/pipeline_v1/documents/prepared_text.jsonl` against its matching `data/pipeline_v1/documents/pipeline_manifest.json`. Pipeline: `home_garden_companion-week3-v1`; run: 10 November 2026, 15:27:12 UTC. Exact output fingerprint and evidence references appear in Appendix A.
 
 **Population and sample:** all **5/5 prepared chunks**, spanning three selected pages of two NParks documents: S01, *Introduction to Indoor Gardening*, pages 5/10; S03, *Introduction to Community Gardening*, page 6 prose. The unit is one chunk. This is a census of the small pilot, not the full source collection. S02 houseplant profiles remain deferred.
 
@@ -66,7 +66,7 @@ The other records provide three media/soil chunks and one plant-choice chunk. S0
 
 **Privacy/collection - Observed:** manual review found no personal identifiers, private user messages or sensitive individual records in the five prepared chunks. This does not cover every raw-PDF element or future inputs. Participant consent is not applicable to these public-document prose records; copyright/intended-use permission is a separate unresolved question.
 
-**Safeguards and owner:** the student project owner maintains the register, preserves notices and keeps source PDFs, extracted text and page images local/ignored. Publish only permitted evidence. Resolve rights before further acquisition/expansion or downstream use; no permission request was sent during this audit. Revalidate when sources, terms, configuration, requirements or reported errors change, and before downstream evaluation. NParks is the publisher, not PlantPal's quality reviewer.
+**Safeguards and owner:** the student project owner maintains the register, preserves notices and keeps source PDFs, extracted text and page images local/ignored. Publish only permitted evidence. Resolve rights before further acquisition/expansion or downstream use; no permission request was sent during this audit. Revalidate when sources, terms, configuration, requirements or reported errors change, and before downstream evaluation. NParks is the publisher, not Home Garden Companion's quality reviewer.
 
 ## 7. Mitigation and Impact on Requirements
 
@@ -79,7 +79,7 @@ These are proposed actions, not completed remediation. Remaining risks include l
 
 ## 8. Quality-Gate Decision
 
-**HOLD: promotion of this five-chunk pilot to the intended PlantPal downstream answer corpus/public AI service.** V1/V2 pass 5/5, but intended-use permission remains N.V.; comparison-ready profiles are absent, the soil table is missing and currency is unverified. Structural quality does not resolve these blockers.
+**HOLD: promotion of this five-chunk pilot to the intended Home Garden Companion downstream answer corpus/public AI service.** V1/V2 pass 5/5, but intended-use permission remains N.V.; comparison-ready profiles are absent, the soil table is missing and currency is unverified. Structural quality does not resolve these blockers.
 
 Do not promote the pilot, redistribute full extracted text or claim complete FR1 support while on HOLD. The metadata-only audit and proposal can document the findings; this gate does not invalidate completed pipeline/audit work or prevent report submission.
 
@@ -117,4 +117,4 @@ Main report: three pages. This appendix is supporting evidence, not additional a
 
 **Assignment basis:** Topic 4 Lab, pp. 3-4 (A1-A3), pp. 5-6 (B1-B4), pp. 7-8 (report and submission). The provided lab requires one eight-section report, a PDF copy and an updated repository; no new pipeline is required.
 
-**Submission:** [GitHub repository](https://github.com/Pokeepic/ai-engineering-plantpal). Final Markdown and PDF are prepared; eLearning upload is pending. GitHub upload is not an eLearning submission.
+**Submission:** [GitHub repository](https://github.com/Pokeepic/ai-engineering-home-garden-companion). Final Markdown and PDF are prepared; eLearning upload is pending. GitHub upload is not an eLearning submission.

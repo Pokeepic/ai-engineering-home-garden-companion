@@ -1,6 +1,6 @@
-# PlantPal - Week 3 V1 Data Pipeline Decisions
+# Home Garden Companion - Week 3 V1 Data Pipeline Decisions
 
-**Date:** 10 November 2026. **Status:** Parts A-C executed locally in Python 3.12.14 with pypdf 6.10.0. Colab execution remains pending. This is a selected-prose preparation pilot, not the full PlantPal answer corpus.
+**Date:** 10 November 2026. **Status:** Parts A-C executed locally in Python 3.12.14 with pypdf 6.10.0. Colab execution remains pending. This is a selected-prose preparation pilot, not the full Home Garden Companion answer corpus.
 
 [Notebook](../notebooks/week3_pipeline.ipynb) | [Diagram](week3_pipeline_diagram.png) | [Editable Draw.io diagram](week3_pipeline_diagram.drawio) | [Source inventory](week3_data_inventory.md)
 

@@ -81,7 +81,7 @@ See [submission checklist](docs/submission_checklist.md) for remaining items. Do
 
 ## Week 3 Parts A-C
 
-Open [week3_pipeline.ipynb](notebooks/week3_pipeline.ipynb) in VS Code, select a Python kernel, and run all cells. Saved outputs are from a local Python run. The same notebook supports [opening in Colab](https://colab.research.google.com/github/Pokeepic/ai-engineering-plantpal/blob/main/notebooks/week3_pipeline.ipynb); no Colab execution is claimed. Raw PDFs remain ignored personal working copies. See the inventory for the rights review and observed extraction limitations.
+Open [week3_pipeline.ipynb](notebooks/week3_pipeline.ipynb) in VS Code, select a Python kernel, and run all cells. Saved outputs are from a local Python run. The same notebook supports [opening in Colab](https://colab.research.google.com/github/Pokeepic/ai-engineering-home-garden-companion/blob/main/notebooks/week3_pipeline.ipynb); no Colab execution is claimed. Raw PDFs remain ignored personal working copies. See the inventory for the rights review and observed extraction limitations.
 
 Part B compares fixed-size and paragraph-aware chunks on three verified pages from two sources. Both produce five chunks; fixed cuts split two sections and one word, while paragraph-aware cuts split neither. The selected method accepts one 656-character chunk above its 500-character target. See the [comparison evidence](data/inspection/week3_part_b_comparison.json) and [lineage manifest](data/week3_manifest.json). This is a preparation pilot, not the full answer corpus: the houseplant brochure remains deferred, and the community-guide soil table is not represented. Prepared text stays local in ignored `data/processed/`; run the notebook to regenerate it.
 

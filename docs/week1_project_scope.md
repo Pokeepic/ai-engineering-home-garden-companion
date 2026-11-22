@@ -1,6 +1,6 @@
-# Week 1 Project Scope: PlantPal
+# Week 1 Project Scope: Home Garden Companion
 
-**Project name:** PlantPal - Document-Grounded Home Gardening Assistant
+**Project name:** Home Garden Companion: An AI Assistant for Tropical Gardening
 
 **Domain:** Home gardening / horticulture
 
@@ -8,7 +8,7 @@
 
 ## Problem Statement
 
-Beginner home gardeners need to understand how light, watering, growing media, and available space affect plant selection and care. Relevant guidance is spread across gardening guides and individual plant resources, so answering a practical question can require consulting several documents. PlantPal will provide plain-language answers grounded in a small, curated collection of official gardening documents, with citations that users can inspect.
+Beginner home gardeners need to understand how light, watering, growing media, and available space affect plant selection and care. Relevant guidance is spread across gardening guides and individual plant resources, so answering a practical question can require consulting several documents. Home Garden Companion will provide plain-language answers grounded in a small, curated collection of official gardening documents, with citations that users can inspect.
 
 The initial context is tropical indoor and balcony gardening, using Singapore-focused NParks material. This is a deliberate limit on the project, rather than a claim that the advice applies to every climate. AI is useful for interpreting everyday questions, combining relevant passages, and asking for missing context. Simple lookups will also be tested with a search baseline; the project will evaluate whether generation adds value.
 
@@ -17,19 +17,19 @@ The initial context is tropical indoor and balcony gardening, using Singapore-fo
 1. **Choosing suitable plants requires environmental knowledge.** NParks explains that plants grown in unsuitable environments become more vulnerable to pests, disease, and death [1]. This supports the need to consider growing conditions when explaining plant choices.
 2. **Indoor gardening involves several constraints.** NParks' indoor gardening guide discusses space, light, water, and plant choice [2, PDF page 5]. Its guidance illustrates why a single question may require considering several factors together.
 
-These sources establish practical gardening considerations. They do not prove that beginners want a chatbot or that PlantPal improves outcomes. User-needs validation and interface testing remain planned; no interviews or surveys have been conducted for this scope.
+These sources establish practical gardening considerations. They do not prove that beginners want a chatbot or that Home Garden Companion improves outcomes. User-needs validation and interface testing remain planned; no interviews or surveys have been conducted for this scope.
 
 ## Initial Related Work / Existing Approaches
 
 | Study or solution | Relevant approach | Key limitation relative to this project |
 |---|---|---|
 | NParks GardeningSG articles and downloadable guides [1, 2, 3] | Authoritative reference material for learning plant care. | Readers must locate and combine the relevant sections themselves. This is a project assessment of the reading workflow, not a measured usability result. |
-| NParks Plant Suggestions [4] | A form provides plant suggestions based on garden conditions. | Its stated purpose is plant selection; PlantPal proposes complementary, document-cited explanations and follow-up care questions. No claim is made about the form's internal algorithm. |
+| NParks Plant Suggestions [4] | A form provides plant suggestions based on garden conditions. | Its stated purpose is plant selection; Home Garden Companion proposes complementary, document-cited explanations and follow-up care questions. No claim is made about the form's internal algorithm. |
 | Lewis et al. (2020), Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks [5] | Combines retrieval from external knowledge with generated answers. | General NLP research does not establish performance for tropical home gardening. Requirements, evaluation criteria, and a conceptual architecture are documented in Week 2; corpus preparation, implementation, and testing remain pending. |
 
 ## Engineering Gap / Limitation
 
-The proposed gap is a narrowly scoped conversational interface that connects a beginner's growing conditions to supporting passages across approved gardening documents, identifies missing information, and makes unsupported questions explicit. PlantPal will investigate this gap; it does not claim that no similar commercial tool exists or that retrieval eliminates hallucinations.
+The proposed gap is a narrowly scoped conversational interface that connects a beginner's growing conditions to supporting passages across approved gardening documents, identifies missing information, and makes unsupported questions explicit. Home Garden Companion will investigate this gap; it does not claim that no similar commercial tool exists or that retrieval eliminates hallucinations.
 
 ## Project Objectives
 
@@ -85,7 +85,7 @@ Both are focused question-answering assistants that retrieve information from au
 
 ## Different from EduAdvisor
 
-PlantPal addresses plant-care questions for home gardeners instead of academic regulations for students. Its context includes light, space, growing media, and plant identity. Its main domain risks include incorrect care guidance, climate mismatch, and unsupported safety claims.
+Home Garden Companion addresses plant-care questions for home gardeners instead of academic regulations for students. Its context includes light, space, growing media, and plant identity. Its main domain risks include incorrect care guidance, climate mismatch, and unsupported safety claims.
 
 ## Responsible AI Risks and Initial Controls
 

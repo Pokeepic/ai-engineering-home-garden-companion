@@ -109,7 +109,7 @@
   },
   "quality_gate": {
     "decision": "HOLD",
-    "scope": "Promotion of this five-chunk NParks pilot to the intended PlantPal downstream answer corpus/public AI service",
+    "scope": "Promotion of this five-chunk NParks pilot to the intended Home Garden Companion downstream answer corpus/public AI service",
     "reasons": [
       "Unresolved permission for intended downstream use",
       "No supported plant-specific comparisons; limited task coverage"

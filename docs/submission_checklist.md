@@ -1,6 +1,6 @@
 # Week 1 Submission Checklist
 
-- [x] PlantPal scope drafted with problem evidence, three related approaches, objectives, data URLs, EduAdvisor comparison, and Responsible AI risks.
+- [x] Home Garden Companion scope drafted with problem evidence, three related approaches, objectives, data URLs, EduAdvisor comparison, and Responsible AI risks.
 - [x] README and required repository folders prepared.
 - [x] Part A observation sheet replaced with the latest supplied Markdown file on 18 October 2026.
 - [x] Latest supplied Part B map copied as `week1_system_map.png` without alteration.

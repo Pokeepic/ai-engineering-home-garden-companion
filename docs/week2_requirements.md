@@ -1,10 +1,10 @@
-# Requirements Specification - PlantPal
+# Requirements Specification - Home Garden Companion
 
 **Version:** 1.1
 
 **Date:** 26 October 2026
 
-**Project:** PlantPal - Document-Grounded Home Gardening Assistant
+**Project:** Home Garden Companion: An AI Assistant for Tropical Gardening
 
 **Status:** Topic 2, Part A specification. Requirements and thresholds are proposed acceptance criteria, not achieved results. The prototype and evaluation sets have not yet been implemented.
 
@@ -12,24 +12,24 @@
 
 ### Problem Evidence
 
-Beginner home gardeners need to relate care instructions to their plant, available light, space, and growing conditions. PlantPal will help them interpret official gardening information and find the supporting source passages.
+Beginner home gardeners need to relate care instructions to their plant, available light, space, and growing conditions. Home Garden Companion will help them interpret official gardening information and find the supporting source passages.
 
 - **Evidence 1:** NParks explains that plants grown in unsuitable environments become weaker and more vulnerable to pests, disease, and death in *Choosing Plants* [1]. This supports the need for plant-care guidance that accounts for environmental conditions.
 - **Evidence 2:** NParks' *Introduction to Indoor Gardening* discusses space, light, water, and plant choice together (PDF page 5) [2]. These interacting considerations support the need to connect guidance across topics instead of presenting an isolated instruction.
 
-These sources support the practical gardening problem. They do not establish demand for a chatbot or prove that PlantPal will improve gardening outcomes. No user survey or interview findings are claimed.
+These sources support the practical gardening problem. They do not establish demand for a chatbot or prove that Home Garden Companion will improve gardening outcomes. No user survey or interview findings are claimed.
 
 ### Related Work / Approaches
 
-| Study / approach | What it already addresses | Limitation relative to PlantPal |
+| Study / approach | What it already addresses | Limitation relative to Home Garden Companion |
 |---|---|---|
 | NParks GardeningSG articles and downloadable guides [1, 2, 3] | Provide authoritative gardening information for readers to consult. | Readers must locate and combine relevant sections themselves. This is an assessment of the document-reading workflow, not a measured usability result. |
-| NParks Plant Suggestions [4] | Provides a form for suggesting plants based on garden conditions. | Its stated purpose is plant selection. PlantPal will focus on complementary care explanations and follow-up questions linked to source passages; the form's internal implementation has not been assessed. |
-| Lewis et al. (2020), *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks* [5] | Studies combining external knowledge retrieval with language generation. | The study does not establish performance for this tropical gardening use case. PlantPal's requirements, evaluation criteria, and conceptual architecture specify these capabilities; source coverage, implementation, and performance still need to be verified. |
+| NParks Plant Suggestions [4] | Provides a form for suggesting plants based on garden conditions. | Its stated purpose is plant selection. Home Garden Companion will focus on complementary care explanations and follow-up questions linked to source passages; the form's internal implementation has not been assessed. |
+| Lewis et al. (2020), *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks* [5] | Studies combining external knowledge retrieval with language generation. | The study does not establish performance for this tropical gardening use case. Home Garden Companion's requirements, evaluation criteria, and conceptual architecture specify these capabilities; source coverage, implementation, and performance still need to be verified. |
 
 ### Limitation (Gap)
 
-The practical gap to investigate is how to connect a beginner's natural-language question and growing conditions to a concise explanation supported by approved gardening documents. PlantPal must retain source traceability, ask for missing context, and acknowledge unsupported questions. This is an engineering improvement proposal, not a claim of scientific novelty or the absence of similar products.
+The practical gap to investigate is how to connect a beginner's natural-language question and growing conditions to a concise explanation supported by approved gardening documents. Home Garden Companion must retain source traceability, ask for missing context, and acknowledge unsupported questions. This is an engineering improvement proposal, not a claim of scientific novelty or the absence of similar products.
 
 AI is appropriate for interpreting differently worded questions and combining relevant information into an explanation. A keyword-search baseline will help determine whether this added complexity improves access to the information; AI is not assumed to outperform search on every task.
 
@@ -94,7 +94,7 @@ A single-user student prototype, demonstrated through a simple text interface on
 
 ### Evaluation Focus
 
-Can PlantPal help beginners obtain understandable, source-supported answers within the defined gardening scope, while recognising ambiguity, insufficient evidence, and unsafe requests?
+Can Home Garden Companion help beginners obtain understandable, source-supported answers within the defined gardening scope, while recognising ambiguity, insufficient evidence, and unsafe requests?
 
 Later evaluation will use the methods below. Reference answers, source passages, expected clarification questions, and expected refusals will be written before testing. Report successes and failures rather than only favourable examples. A keyword-search baseline will return relevant passages from the same corpus; compare evidence-finding success and time to a supported answer in a small, documented task study. Do not assume that a search result is equivalent to a generated answer.
 
@@ -152,7 +152,7 @@ Acceptance scenarios include a documented care question (FR1), tracing a claim t
 
 ### Part A Reflection
 
-RAI1, transparency and grounding, is likely to be the most difficult requirement to measure and enforce. Checking that a citation exists is straightforward, but determining whether its passage supports every factual claim requires careful interpretation. A response can cite a real page while applying a general statement too broadly to a particular plant or growing condition. PDF extraction errors and information spread across multiple passages make the judgement harder. PlantPal will therefore retain page references, evaluate claims against annotated evidence, and abstain when support is insufficient. Manual review is feasible for this small prototype, although it is time-consuming and cannot establish reliability for every future question.
+RAI1, transparency and grounding, is likely to be the most difficult requirement to measure and enforce. Checking that a citation exists is straightforward, but determining whether its passage supports every factual claim requires careful interpretation. A response can cite a real page while applying a general statement too broadly to a particular plant or growing condition. PDF extraction errors and information spread across multiple passages make the judgement harder. Home Garden Companion will therefore retain page references, evaluate claims against annotated evidence, and abstain when support is insufficient. Manual review is feasible for this small prototype, although it is time-consuming and cannot establish reliability for every future question.
 
 ### References
 

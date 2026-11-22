@@ -1,4 +1,4 @@
-# PlantPal - Week 3 Data Inventory
+# Home Garden Companion - Week 3 Data Inventory
 
 **Date:** 10 November 2026
 
@@ -10,7 +10,7 @@
 
 | Requirement ID | Needed information / feature | Selected sources | Why usable / constraint |
 |---|---|---|---|
-| FR1 | Supported gardening guidance about light, watering principles, media and space | S01, S02; relevant portions of S03 | NParks documents fit the tropical home-gardening domain. Source content outside PlantPal's task boundaries does not expand the application scope. |
+| FR1 | Supported gardening guidance about light, watering principles, media and space | S01, S02; relevant portions of S03 | NParks documents fit the tropical home-gardening domain. Source content outside Home Garden Companion's task boundaries does not expand the application scope. |
 | FR2 | Document title, official URL and one-based PDF page identity | S01-S03 plus the source register | Page-by-page extraction retains provenance for eventual citations. A byte hash identifies an exact snapshot, not truth or rights. |
 | RAI1 | Evidence supporting claims and explicit limitations where evidence is absent | S01-S03 compared with visible original pages | Reading order, hidden text and icon loss can affect whether citations support an answer. Successful extraction does not establish full suitability. |
 
@@ -28,7 +28,7 @@ PDF creation timestamps are file metadata, **not confirmed publication dates or 
 
 ## A2 - Workspace and Source Identity
 
-The local workspace is the PlantPal repository. In VS Code, open the repository folder and select a Python kernel for the notebook. In Colab the same setup cell uses `/content/week3_project`.
+The local workspace is the Home Garden Companion repository. In VS Code, open the repository folder and select a Python kernel for the notebook. In Colab the same setup cell uses `/content/week3_project`.
 
 | Storage | Purpose | GitHub policy |
 |---|---|---|
@@ -72,7 +72,7 @@ The PDFs remain personal local working copies with their notices intact. The pub
 
 ## Preparation Pathway Decision for Part B
 
-**Select pathway A: PDF/TXT documents.** PlantPal remains a text-based, document-grounded assistant. Embedded photos/icons do not automatically justify building an image-recognition pipeline.
+**Select pathway A: PDF/TXT documents.** Home Garden Companion remains a text-based, document-grounded assistant. Embedded photos/icons do not automatically justify building an image-recognition pipeline.
 
 - Start from raw, unchanged copies and preserve document/page identifiers.
 - Compare simple extraction with heading/layout-aware handling where reading order is unreliable, especially S02.
@@ -85,7 +85,7 @@ No preparation comparison has yet been performed, so no method is claimed to be 
 
 ## Completion Checkpoint
 
-- [x] Actual PlantPal sources selected and linked to three Topic 2 requirements.
+- [x] Actual Home Garden Companion sources selected and linked to three Topic 2 requirements.
 - [x] Source identity, filenames, access notes and fingerprints recorded.
 - [x] Local workspace initialised; selected inputs verified and loaded.
 - [x] Three files and six representative page subsets inspected; short loaded samples saved in notebook outputs.

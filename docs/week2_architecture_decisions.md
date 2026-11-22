@@ -1,4 +1,4 @@
-# PlantPal - V1 Architecture Decisions and Traceability
+# Home Garden Companion - V1 Architecture Decisions and Traceability
 
 **Version:** 1.0
 
@@ -10,11 +10,11 @@ Inputs: [requirements](week2_requirements.md) and [evaluation criteria](week2_ev
 
 Diagram: [PNG](week2_architecture_v1.png) | [editable Draw.io source](week2_architecture_v1.drawio).
 
-![PlantPal V1 conceptual architecture](week2_architecture_v1.png)
+![Home Garden Companion V1 conceptual architecture](week2_architecture_v1.png)
 
 ## Starting Point and Architecture Needs
 
-The simplest starting point is **User -> Application Interface -> AI Capability -> Response**. A language model alone cannot demonstrate that a gardening answer came from an approved NParks document or that a cited page supports its claims. PlantPal therefore adds knowledge access, provenance, explicit controls, and evaluation capabilities justified by the requirements below. These are logical responsibilities and can initially reside within one small application; each box does not require a separate deployed service.
+The simplest starting point is **User -> Application Interface -> AI Capability -> Response**. A language model alone cannot demonstrate that a gardening answer came from an approved NParks document or that a cited page supports its claims. Home Garden Companion therefore adds knowledge access, provenance, explicit controls, and evaluation capabilities justified by the requirements below. These are logical responsibilities and can initially reside within one small application; each box does not require a separate deployed service.
 
 | Requirement / constraint | What the simple flow lacks | Architecture response |
 |---|---|---|
@@ -60,13 +60,13 @@ The simplest starting point is **User -> Application Interface -> AI Capability 
 
 ## Research Basis and Limits
 
-| Reference | Relevant research finding | How it informs PlantPal | Limit of the inference |
+| Reference | Relevant research finding | How it informs Home Garden Companion | Limit of the inference |
 |---|---|---|---|
-| R1 - Lewis et al. (2020) | Investigates combining retrieval from external memory with language generation for knowledge-intensive tasks. | Supports considering A4/A5 alongside A6 rather than relying only on model parameters. | PlantPal is not reproducing the paper's training architecture or benchmark results. Gardening performance must be evaluated locally. |
-| R2 - Gao et al. (2023) | Studies generated answers with citations and evaluates citation quality; the reported systems still have substantial citation-support limitations. | Supports retaining provenance and checking support separately from merely detecting a citation in A7/A9. | A citation checker is not a guarantee of truth, and PlantPal's targets are project choices rather than results from this paper. |
+| R1 - Lewis et al. (2020) | Investigates combining retrieval from external memory with language generation for knowledge-intensive tasks. | Supports considering A4/A5 alongside A6 rather than relying only on model parameters. | Home Garden Companion is not reproducing the paper's training architecture or benchmark results. Gardening performance must be evaluated locally. |
+| R2 - Gao et al. (2023) | Studies generated answers with citations and evaluates citation quality; the reported systems still have substantial citation-support limitations. | Supports retaining provenance and checking support separately from merely detecting a citation in A7/A9. | A citation checker is not a guarantee of truth, and Home Garden Companion's targets are project choices rather than results from this paper. |
 | R3 - Liu et al. (2024) | Finds that performance in studied tasks can depend on where relevant information appears in a long context. | Motivates selective context and testing multi-passage answers instead of assuming that sending every document is sufficient. | This does not establish that retrieval is always superior, or that every current model has identical limitations. Context selection remains a design hypothesis to test. |
 
-The papers motivate architectural capabilities. They do not prescribe PlantPal's exact model, framework, database, thresholds, or control implementation. Privacy and scope controls above are derived primarily from the agreed requirements.
+The papers motivate architectural capabilities. They do not prescribe Home Garden Companion's exact model, framework, database, thresholds, or control implementation. Privacy and scope controls above are derived primarily from the agreed requirements.
 
 ## Initial Requirements Traceability Matrix
 
@@ -96,7 +96,7 @@ The Requirement Type column includes the exact requirement IDs so each row can b
 
 ## Part C Reflection
 
-The most important trade-off is ADR1: adding document knowledge access rather than relying on the language model alone. FR1, FR2, NFR2, and RAI1 require answers to be connected to approved gardening information and verifiable sources. A4/A5 make that connection possible, but introduce document preparation, retrieval errors, and additional response time. Selective context also risks omitting a passage needed for a complete answer. I accept this complexity because source-grounded explanations are central to PlantPal's purpose, while retaining keyword search as a baseline and testing correctness, citation support, and latency to determine whether the approach is useful.
+The most important trade-off is ADR1: adding document knowledge access rather than relying on the language model alone. FR1, FR2, NFR2, and RAI1 require answers to be connected to approved gardening information and verifiable sources. A4/A5 make that connection possible, but introduce document preparation, retrieval errors, and additional response time. Selective context also risks omitting a passage needed for a complete answer. I accept this complexity because source-grounded explanations are central to Home Garden Companion's purpose, while retaining keyword search as a baseline and testing correctness, citation support, and latency to determine whether the approach is useful.
 
 ## References
 

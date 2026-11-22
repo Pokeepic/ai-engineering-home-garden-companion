@@ -1,17 +1,17 @@
-# PlantPal - Dataset and Data-Source References
+# Home Garden Companion - Dataset and Data-Source References
 
 **Research date:** 26 October 2026  
-**Status:** Reference shortlist from web research. No datasets have been downloaded, ingested, or evaluated for PlantPal. Listing a source here does not add it to the approved answer corpus.
+**Status:** Reference shortlist from web research. No datasets have been downloaded, ingested, or evaluated for Home Garden Companion. Listing a source here does not add it to the approved answer corpus.
 
 ## Purpose
 
-Keep the plant-care sources and related research found during project planning in one place. PlantPal's current scope is English, text-based guidance for beginner tropical indoor and balcony gardeners, initially covering up to ten adequately documented houseplants.
+Keep the plant-care sources and related research found during project planning in one place. Home Garden Companion's current scope is English, text-based guidance for beginner tropical indoor and balcony gardeners, initially covering up to ten adequately documented houseplants.
 
 The existing NParks candidate corpus remains defined in the [project scope](week1_project_scope.md#data-sources) and [requirements](week2_requirements.md). The additional sources below are candidates for later review.
 
 ## Source Shortlist
 
-| Source | Contents described by its publisher or authors | Potential role in PlantPal | Current assessment |
+| Source | Contents described by its publisher or authors | Potential role in Home Garden Companion | Current assessment |
 |---|---|---|---|
 | [NParks gardening guides](https://gardeningsg.nparks.gov.sg/learn-more-about-gardening/downloads/) | Official gardening documents, including introductory indoor-gardening guidance. | Primary retrieval corpus with document and page citations. | Best starting point for the existing V1 plan; verify relevant passages and plant coverage before ingestion. |
 | [Indoor Plants Dataset](https://zenodo.org/records/6984514) | Indoor-plant data covering light, temperature, relative humidity, watering, soil mix, and general care. The record provides a downloadable archive. | Structured plant profiles and supporting metadata. | Candidate supplement; record-level accuracy, tropical relevance, and reuse terms need review. |
@@ -50,7 +50,7 @@ The repository README and sample-directory listing were inspected; access to the
 
 **Related-work reference:** Tomar, M., Tiwari, A., Saha, T., Jha, P., and Saha, S. (2024). *An EcoSage Assistant: Towards Building A Multimodal Plant Care Dialogue Assistant*. European Conference on Information Retrieval, pp. 318-332. https://doi.org/10.1007/978-3-031-56060-6_21
 
-EcoSage is directly relevant prior work on plant-care dialogue. PlantPal's proposed distinction is its narrow tropical scope and document/page-grounded answers; this is a project direction, not a demonstrated novelty or performance advantage.
+EcoSage is directly relevant prior work on plant-care dialogue. Home Garden Companion's proposed distinction is its narrow tropical scope and document/page-grounded answers; this is a project direction, not a demonstrated novelty or performance advantage.
 
 ### 4. Plantfolio Common Plants
 
@@ -58,7 +58,7 @@ EcoSage is directly relevant prior work on plant-care dialogue. PlantPal's propo
 - English merged JSON: https://github.com/Luminoid/plantfolio-common-plants/blob/main/dist/common_plants.json
 - Licence: **CC BY-NC-SA 4.0**, as stated in the repository.
 
-The repository warns of possible inaccuracies and omissions. Fixed watering intervals must not override PlantPal's requirement to consider growing conditions and avoid unsupported schedules. Toxicity fields do not expand V1 into ingestion or pet-safety guidance.
+The repository warns of possible inaccuracies and omissions. Fixed watering intervals must not override Home Garden Companion's requirement to consider growing conditions and avoid unsupported schedules. Toxicity fields do not expand V1 into ingestion or pet-safety guidance.
 
 ### 5. 1001 Garden Plants in Singapore
 
@@ -73,7 +73,7 @@ The three volumes cover succulents/aquatic plants/orchids; climbers/shrubs/groun
 3. Consider structured datasets only where they add verified information missing from the initial corpus. Adding a source requires updating the source register and evaluation annotations.
 4. Review relevant compendium entries if the introductory guides lack sufficient species-level evidence.
 
-A retrieval-augmented prototype can begin with a small, reliable document collection; these sources do not require PlantPal to train or fine-tune a model.
+A retrieval-augmented prototype can begin with a small, reliable document collection; these sources do not require Home Garden Companion to train or fine-tune a model.
 
 ## Review Before Admission
 

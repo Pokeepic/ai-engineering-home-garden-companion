@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<mxfile host="app.diagrams.net" agent="PlantPal diagram generator">
-  <diagram id="plantpal-data-v1" name="Week 3 Pipeline">
+<mxfile host="app.diagrams.net" agent="Home Garden Companion diagram generator">
+  <diagram id="home_garden_companion-data-v1" name="Week 3 Pipeline">
     <mxGraphModel dx="1600" dy="1530" grid="1" gridSize="10" page="1" pageWidth="1600" pageHeight="1530">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="title" value="PlantPal | Executed V1 Data Pipeline&#10;&#10;Week 3 Part C | 10 November 2026 | Expands Week 2 A5 sources/preparation for future A4 knowledge access" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e9f0f5;strokeColor=#658294;fontColor=#193b50;fontSize=28;align=left;verticalAlign=top;spacing=18;" vertex="1" parent="1">
+        <mxCell id="title" value="Home Garden Companion | Executed V1 Data Pipeline&#10;&#10;Week 3 Part C | 10 November 2026 | Expands Week 2 A5 sources/preparation for future A4 knowledge access" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e9f0f5;strokeColor=#658294;fontColor=#193b50;fontSize=28;align=left;verticalAlign=top;spacing=18;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="40" y="25" width="1520" height="120" />
         </mxCell>
         <mxCell id="source" value="SOURCE | Selected NParks PDFs&#10;&#10;S01: indoor gardening, pages 5 and 10&#10;S03: community gardening, page 6 prose" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e3f2e9;strokeColor=#658294;fontColor=#193b50;fontSize=23;align=left;verticalAlign=top;spacing=18;" vertex="1" parent="1">

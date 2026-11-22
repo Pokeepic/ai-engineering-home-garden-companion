@@ -1,10 +1,10 @@
 {
-  "pipeline_version": "plantpal-week3-v1",
+  "pipeline_version": "home_garden_companion-week3-v1",
   "generated_at_utc": "2026-11-10T15:27:12.681899+00:00",
   "execution_environment": "local Python",
   "python_version": "3.12.14",
   "configuration": {
-    "pipeline_version": "plantpal-week3-v1",
+    "pipeline_version": "home_garden_companion-week3-v1",
     "admitted_pages": {
       "S01": [
         5,
