@@ -35,11 +35,13 @@ Together, these approaches point to the project's engineering gap: integrating c
 
 ### 1.3 Objectives Target Users and Scope
 
-O1 is to identify beginner information needs and establish a verified source collection covering light, watering principles, growing media and space. This objective connects the intended users to the knowledge the system must contain. Source inspection has begun; user-needs validation and complete task coverage remain part of the planned work.
+The objectives of this project are:
 
-O2 is to develop a text-based assistant that retrieves relevant passages, explains supported guidance in plain language and supplies document/page citations. The same interaction must request essential missing context, acknowledge insufficient evidence and refuse excluded tasks. These behaviours define the proposed application, rather than an unrestricted gardening chatbot.
+1. To identify beginner gardeners’ information needs and establish a verified collection of relevant gardening sources.
 
-O3 is to evaluate correctness, citation support, clarity, response time and handling of ambiguous, unsupported and excluded requests. A subsequent task comparison will examine supported task completion and time to a correct answer against keyword search over the same approved documents. This objective tests the proposed benefit instead of assuming that a conversational interface is necessarily better.
+2. To develop a text-based gardening assistant that provides source-cited guidance and handles unclear, unsupported and excluded questions appropriately.
+
+3. To evaluate the assistant’s correctness, citation support, clarity, usability and response time, including comparison with keyword search over the same approved documents.
 
 The intended users are beginner gardeners caring for tropical indoor or balcony plants. The initial operating context is an English-language, single-user prototype with temporary conversation context and a bounded document collection. Supported tasks include explaining light requirements, interpreting watering principles, discussing growing media and comparing plants when the sources provide sufficient evidence. Accounts, exact household addresses and persistent personal profiles are not required for these tasks.
 
@@ -73,15 +75,15 @@ Privacy checks must cover external transmission and storage because users may su
 
 ### 2.3 Alignment with Project Objectives
 
-Table 2 links objectives, requirements and assessment. Source checks contribute to O1; application behaviour and measured usefulness provide the evidence for O2 and O3.
+Table 2 links objectives, requirements and assessment. Source checks contribute to Objective 1; application behaviour and measured usefulness provide the evidence for Objective 2 and Objective 3.
 
 Table 2. Objective and requirement alignment.
 
 | Objective | Relevant requirements | Evidence or planned assessment |
 |---|---|---|
-| O1 Needs and sources | FR1 scope, FR2 provenance and RAI4 coverage | Source inventory, coverage review and planned user-needs validation. |
-| O2 Cited text assistant | FR1–FR5, RAI1–RAI4, NFR1 and NFR3 | Implemented interaction and controls corresponding to architecture elements A2–A8. |
-| O3 Evaluate usefulness | NFR1–NFR4 and RAI1–RAI4 | Application tests and comparison with keyword search, recorded through A9. |
+| 1. Needs and sources | FR1 scope, FR2 provenance and RAI4 coverage | Source inventory, coverage review and planned user-needs validation. |
+| 2. Cited text assistant | FR1–FR5, RAI1–RAI4, NFR1 and NFR3 | Implemented interaction and controls corresponding to architecture elements A2–A8. |
+| 3. Evaluate usefulness | NFR1–NFR4 and RAI1–RAI4 | Application tests and comparison with keyword search, recorded through A9. |
 
 Chapter 3 specifies the measures and failure treatment used to assess this alignment.
 
