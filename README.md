@@ -75,6 +75,7 @@ The [ChatGPT system map](docs/week1_system_map.png) and [observation sheet](docs
 | W1 | Project scope and repository; preserve group evidence | README, scope, observation sheet, system map | Prepared; group-evidence review and course-portal submission remain |
 | W2 | Requirements, evaluation criteria, and V1 architecture | [Requirements](docs/week2_requirements.md), [Evaluation criteria](docs/week2_evaluation_criteria.md), [Architecture diagram](docs/week2_architecture_v1.png), [Decisions and traceability](docs/week2_architecture_decisions.md) | Parts A-C documented; implementation and evaluation not started |
 | W3 | Parts A-C: inspection, preparation and repeatable pipeline | [Notebook](notebooks/week3_pipeline.ipynb), [Data inventory](docs/week3_data_inventory.md), [Inspection evidence](data/inspection/week3_part_a_inspection.json) | Parts A-C locally executed; repeatability and failure checks passed; Colab checkpoint pending |
+| W4 | Data quality and responsible-data audit | [Report](docs/week4_data_quality_report.md), [PDF](docs/week4_data_quality_report.pdf) | Parts A-C prepared; scoped HOLD documented; eLearning submission pending |
 
 See [submission checklist](docs/submission_checklist.md) for remaining items. Do not commit credentials, personal conversation logs, or restricted documents.
 
@@ -86,10 +87,10 @@ Part B compares fixed-size and paragraph-aware chunks on three verified pages fr
 
 Part C integrates the same preparation into a reusable runner that re-reads the PDFs. Two runs produced identical output fingerprints and mappings; the five records also match Part B byte for byte. Missing-input and changed-checksum tests stop without replacing valid output. See the [pipeline diagram](docs/week3_pipeline_diagram.png), [editable Draw.io source](docs/week3_pipeline_diagram.drawio), [decisions and stage contracts](docs/week3_pipeline_decisions.md), [execution manifest](data/pipeline_v1/documents/pipeline_manifest.json), and [validation evidence](data/inspection/week3_part_c_validation.json). Colab runtime evidence and comprehensive data-quality/model evaluation remain pending.
 
-## Week 4 - Part A audit checkpoint
+## Week 4 - Data quality and responsible data practices
 
-[Data Quality & Bias Report](docs/week4_data_quality_report.md) is a working report with Part A (A1-A3) completed on 22 November 2026. All five existing Part C chunks were inspected; [metadata-only evidence](data/inspection/week4_part_a_inspection.json) records complete fields, consistent source metadata and no normalised-exact duplicates. Selected prose matches the source pages, but task coverage is limited and timeliness is Not Verified. Two validation rules are defined; formal Part B findings, risk review, quality-gate decision and Part C PDF submission remain pending.
+Parts A-C report preparation completed on 22 November 2026. Read the [final eight-section report](docs/week4_data_quality_report.md) or [submission PDF](docs/week4_data_quality_report.pdf): three main pages plus one evidence appendix.
 
-## Week 4 - Part B review and quality gate
+All five prepared chunks were audited. [Part A evidence](data/inspection/week4_part_a_inspection.json) documents the five quality dimensions; [Part B evidence](data/inspection/week4_part_b_validation.json) records V1 source-reference checks and V2 source-fidelity review, each passing 5/5. **Quality gate: HOLD for promotion to the intended downstream answer corpus/service**, due to unresolved intended-use permission and incomplete task coverage. Resolve rights/source currency and verify comparison-ready content before re-review. This is a dataset-use gate, not an assignment failure.
 
-[Working audit report](docs/week4_data_quality_report.md): Parts A/B completed on 22 November 2026. [Formal validation evidence](data/inspection/week4_part_b_validation.json) records V1 source-reference checks and V2 source-fidelity review: each passed 5/5. **Quality gate: HOLD for promotion to the intended downstream PlantPal answer corpus/service**, because intended-use permission is unresolved and comparison-ready plant profiles are absent. Resolve rights/source currency and verify task coverage before re-review. Part C finalisation, PDF export and eLearning submission remain pending; no full extracted text was published.
+The final report and PDF are committed; **eLearning PDF upload remains pending**. Full source-derived text stays local. Colab execution and later application evaluation are not claimed.

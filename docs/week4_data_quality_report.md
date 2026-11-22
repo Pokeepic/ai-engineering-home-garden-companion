@@ -1,126 +1,120 @@
 # PlantPal - Data Quality & Bias Report
 
-**Audit date:** 22 November 2026. **Status:** Parts A and B completed; Part C finalisation/PDF submission pending. Quality gate: HOLD for promotion of the audited pilot to the intended downstream answer corpus. This is a working report, not the final submission PDF.
+**Individual project | Topic 4 | Audit and finalisation: 22 November 2026**
+
+**Status:** Parts A-C report preparation complete. E-learning submission remains pending. **Gate: HOLD** for promotion of this pilot to the intended downstream answer corpus/service. The pipeline and audit are completed evidence, not a finished AI application.
 
 ## 1. Project and Data Overview
 
-PlantPal is a proposed document-grounded assistant for beginner tropical home gardeners. It aims to answer supported English questions with source citations and acknowledge missing coverage.
+PlantPal proposes document-grounded guidance for beginner tropical home gardeners. This audit examines data prerequisites for two Topic 2 requirements: **FR1**, supported light/water/media/space guidance and plant comparisons without invented care instructions; and **FR2**, truthful document-title, URL and one-based PDF-page citations for factual claims. No generated-answer compliance is measured.
 
-**A1 - Requirements:** From [Week 2 requirements](week2_requirements.md):
+**Pathway A (PDF/TXT), Topic 3 Part C:** audit `data/pipeline_v1/documents/prepared_text.jsonl` against its matching `data/pipeline_v1/documents/pipeline_manifest.json`. Pipeline: `plantpal-week3-v1`; run: 10 November 2026, 15:27:12 UTC. Exact output fingerprint and evidence references appear in Appendix A.
 
-| ID | Existing requirement | Data needed |
-|---|---|---|
-| FR1 | Answer supported English questions about light, watering principles, growing media, and space, including comparisons between supported plants, using approved documents; do not invent unsupported care instructions, species details or fixed watering schedules. | Readable, correctly associated gardening passages covering the requested topics and plant comparisons; explicit coverage limits. |
-| FR2 | Attach a document title, source URL and one-based PDF page reference to each factual gardening claim, allowing shared citations when appropriate; do not fabricate sources or present unsupported claims as approved evidence. | Accurate source identity and page metadata attached to every prepared chunk. This audit checks data prerequisites, not generated-answer compliance. |
+**Population and sample:** all **5/5 prepared chunks**, spanning three selected pages of two NParks documents: S01, *Introduction to Indoor Gardening*, pages 5/10; S03, *Introduction to Community Gardening*, page 6 prose. The unit is one chunk. This is a census of the small pilot, not the full source collection. S02 houseplant profiles remain deferred.
 
-- **Pathway:** A, PDF/TXT. Audited artifact: Topic 3 **Part C**, `data/pipeline_v1/documents/prepared_text.jsonl` (local, ignored by Git).
-- **Matching manifest:** [pipeline_manifest.json](../data/pipeline_v1/documents/pipeline_manifest.json), pipeline `plantpal-week3-v1`, run timestamp `2026-11-10T15:27:12.681899+00:00`.
-- **Output SHA-256:** `66f82bdf2112360c8f4f1f7e5aba86e63951280e6aa2bd067e4d8a6221181204`. Rechecked on the audit date; output and both contributing source hashes match the manifest. The pipeline was not rerun or modified for this audit.
-- **Population/sample:** five prepared chunks; inspect all five (a census of the pilot). They represent three selected PDF pages from two documents, not the complete original collection. No claim about unselected pages or the entire intended knowledge base follows from this sample.
-- **Sources:** NParks S01, *Introduction to Indoor Gardening*, pages 5/10; S03, *Introduction to Community Gardening*, page 6 prose. Exact URLs, source hashes and ownership are in the manifest and [inventory](week3_data_inventory.md). S02 remains deferred.
-- **Version/access:** bytes are pinned by checksum; publication/revision dates remain unverified. Existing inventory records personal working copies and no established open redistribution licence. Permission for intended downstream AI use remains N.V.; the Part B review is recorded in Section 6. Original PDFs, full extracted text and rendered pages remain local.
-- **Evidence:** [Part A inspection record](../data/inspection/week4_part_a_inspection.json), [Week 3 decisions](week3_pipeline_decisions.md), local prepared records and visual comparison with all three source pages on 22 November 2026.
-
-**A1 checkpoint:** Incomplete species-specific evidence could prevent FR1 plant comparisons. Missing soil-ratio table content could prevent an evidence-supported mixing-ratio answer. Valid citation metadata alone does not fill those gaps; the assistant would need to acknowledge missing support.
+The output and both source hashes match the manifest. Raw PDFs, extracted text and page images stay local; public evidence is metadata and original observations. Publication/revision dates and permission for intended downstream AI use are **Not Verified (N.V.)**. Missing plant profiles could prevent FR1 comparisons; the missing soil table could prevent supported ratio answers. Valid citation fields do not fill those gaps.
 
 ## 2. Five-Dimension Quality Scorecard
 
-**A2:** Labels distinguish observed evidence from inferred application risks. Pass means only that the stated scoped check is satisfied; it is not a whole-system acceptance result.
+Observed findings use all five records plus rendered source pages. Decisions apply only to the stated checks; inferred effects are not measured model outcomes.
 
-| Dimension | Finding and evidence | Potential task impact | Decision |
-|---|---|---|---|
-| Completeness | **Observed:** 5/5 chunks contain non-empty record ID, text, source ID/file, title, URL, page and source hash. General space/light/water/media prose exists. S03 p6's visible soil-ratio table is absent from the prepared record; S02 profiles are deferred. | **Inferred risk:** metadata completeness may hide missing task knowledge; full FR1 comparisons and table-based answers are unsupported by this pilot. | **Warning:** complete required fields, incomplete task coverage. |
-| Consistency | **Observed:** 5/5 share the same schema; title, URL, filename and source hash agree with their source manifest entry; all pages belong to the declared selected-page set. Output and source fingerprints match the run manifest. | Supports FR2 traceability and reduces mismatched-source citations; does not establish claim support. | **Pass** for inspected metadata consistency. |
-| Accuracy | **Observed:** all five chunks were compared with rendered S01 p5/p10 and S03 p6. Selected prose and heading/body associations are preserved; whitespace and documented heading/order changes do not add claims. The removed hidden editorial placeholder is not visible source guidance. S03 table content remains omitted, not invented. | Source fidelity supports FR1/FR2. Independent horticultural correctness and complete extraction have not been established. | **Pass** for selected-prose fidelity; completeness warning remains. |
-| Timeliness | **Not Verified:** acquisition/run timestamps identify processing, not publication freshness. No verified revision dates or explicit data-age acceptance criterion were established in the reviewed requirements/inventory. No live latest-version comparison was performed in Part A. | Cannot claim the guidance is current merely because it was downloaded recently; a later revision might change evidence. | **N.V.** Verify versions and define a justified review trigger. |
-| Uniqueness | **Observed:** five unique IDs and five distinct text values after whitespace normalisation and case folding; zero duplicate records beyond the first under either check. | Avoids exact duplicate chunks dominating later retrieval. Near-duplicates and semantic redundancy are not measured by this check. | **Pass** for ID and normalised-exact-text uniqueness only. |
+| Dimension | Finding / evidence | Task impact and decision |
+|---|---|---|
+| Completeness | Observed: 5/5 have non-empty text and required citation/identity fields. S03 p6's ratio table is absent; S02 profiles are deferred. | FR1 coverage remains incomplete despite complete fields. **Warning.** |
+| Consistency | Observed: 5/5 share a schema; source title, URL, filename, hash and admitted page agree with the manifest. Source/output hashes match. | Supports FR2 traceability. **Pass** for scoped metadata checks. |
+| Accuracy | Observed: all five chunks preserve selected prose and heading associations on S01 p5/p10 and S03 p6 after documented cleanup/order changes. | **Pass** for selected-prose fidelity. Complete extraction and independent gardening correctness are not established. |
+| Timeliness | N.V.: no verified publication/revision dates, latest-edition check or explicit task-based data-age criterion. Run/download dates are not publication dates. | Cannot claim current advice. **N.V.** Verify versions and review triggers. |
+| Uniqueness | Observed: 5 unique IDs and 5 distinct whitespace-normalised, case-folded text values; no duplicate beyond the first. | **Pass** for exact-normalised duplicates; semantic redundancy not assessed. |
 
-### Item-level manual inspection evidence
-
-| Record ID | Source page | Characters | Observed content and exception |
-|---|---|---:|---|
-| S01-p05-0001 | S01 p5 | 466 | Space, light and watering prose retains the corresponding headings. |
-| S01-p05-0002 | S01 p5 | 166 | Plant-choice advice is a complete section. Short length is not a defect. |
-| S01-p10-0003 | S01 p10 | 656 | General media prose remains intact. Exceeding 500 characters is the documented soft-target exception, not automatic failure. |
-| S01-p10-0004 | S01 p10 | 307 | Charcoal and coco-chip descriptions remain associated with their own headings. |
-| S03-p06-0005 | S03 p6 | 399 | Soil definitions/general prose is retained; title and prose order differ as documented. The table is absent and cannot be treated as available evidence. |
+<!-- pagebreak -->
 
 ## 3. Validation Findings
 
-**A3 / B1:** The rules below were applied on 22 November 2026. V1 uses explicit register, manifest and PDF checks. V2 reuses Part A visual comparisons after confirming the output and source hashes are unchanged. No model-based semantic score is claimed.
+**V1 - Valid source references (FR2):** every record must have source ID, title, URL, filename, hash and integer page agreeing with the notebook register and matching manifest. The page must exist in the actual PDF and be admitted. Failure holds the affected chunk for reference repair and recheck.
 
-| Rule | Risk / requirement | Checkable condition and evidence | Action if failed |
-|---|---|---|---|
-| V1 - Valid source references | Incorrect or missing citations; FR2 | For each of all five chunks, source ID, title, URL, filename, hash and one-based integer page must be present and agree with the source register/matching manifest. Page must exist in the referenced PDF and belong to the admitted-page set. Check metadata against the register, manifest and PDF page count. Every record needs a valid reference because each may supply citation evidence. | Hold the affected chunk from downstream use; correct the mapping using the actual source and recheck. Do not fabricate missing fields. |
-| V2 - Faithful, usable content | Lost context or changed meaning from extraction/chunking; FR1 and documented Topic 3 preparation risk | For each of all five chunks, text must be non-empty and preserve the cited section's factual wording and heading/body association after documented whitespace cleanup, placeholder removal and heading/order changes. Manually compare with the rendered cited page; flag mid-sentence or detached-heading cuts. Use source/record IDs to document exceptions. This does not require reproducing every source-page element. | Flag for manual review; correct or exclude an affected chunk based on evidence. Do not delete short or oversized-but-intact chunks merely because of length. Missing table/topic coverage is recorded separately, not converted into invented text. |
-
-### B1 - Actual rule results
+**V2 - Faithful, usable content (FR1 / extraction risk):** every record must contain non-empty text preserving cited factual wording and heading/body associations after documented whitespace cleanup, placeholder removal and heading/order changes. Compare against rendered source pages; flag broken sentences or detached headings. Failure requires manual review, correction or justified exclusion, not automatic deletion by length.
 
 | Rule | Tested | Pass / Fail / N.V. | Evidence and action |
-|---|---:|---|---|
-| V1 | 5/5 chunks | 5 / 0 / 0 | Every chunk agrees with the notebook source register and Part C manifest; actual source hashes match; integer pages exist and are admitted. No record requires reference repair. |
-| V2 | 5/5 chunks | 5 / 0 / 0 | Reused documented visual review of all five unchanged chunks against S01 p5/p10 and S03 p6. Selected prose and headings remain faithful; no broken-sentence cut observed. No chunk is removed. Missing table content is a coverage gap, not a fabricated-text failure. |
+|---|---|---|---|
+| V1 | 5/5 | 5 / 0 / 0 | Executable checks against notebook register, manifest, source hashes and actual PDF page counts. No reference repairs needed. |
+| V2 | 5/5 | 5 / 0 / 0 | Reused Part A visual review after verifying unchanged source/output fingerprints. No invented prose or broken section observed; no chunks removed. |
 
-[Part B evidence](../data/inspection/week4_part_b_validation.json) records every ID and V1 subcheck, V2 review basis, denominators and scope. A V2 pass establishes fidelity of selected text, not complete coverage or independent gardening correctness. The 656-character chunk passes because its complete section exceeds a soft target; the 166-character section is valid too.
+The [Part B evidence](../data/inspection/week4_part_b_validation.json) records per-item results. V2 is a documented manual review, not an automatic semantic score. Missing source-page content is a separate coverage issue; a pass does not imply complete extraction.
 
 ## 4. Duplicate, Anomaly and Coverage Findings
 
-**Observed:** all five IDs and whitespace-normalised/case-folded texts are distinct (Part A evidence). No exact duplicates were found. Semantic duplication was not assessed. Short or oversized intact chunks are documented exceptions, not automatic defects.
+No exact-normalised duplicates were observed. The 166-character plant-choice chunk is a complete short section; the 656-character media chunk exceeds the **500-character soft target** to preserve a section. Both are valid exceptions, not defects. Other chunk lengths are 466, 307 and 399 characters.
 
-**B2 - Two FR1-relevant categories:** inspection unit is a chunk; all five were reviewed. These counts describe this pilot, not the full NParks collection.
-
-| Category | Expected evidence | Observed evidence / gap | Possible downstream effect |
+| FR1 category | Needed evidence | Observed coverage across 5 chunks | Possible downstream effect |
 |---|---|---|---|
-| General indoor growing conditions | Documented light, water and space principles | 1/5 chunks, `S01-p05-0001`, covers these three topics. It gives general guidance, not species-specific intervals. | Can support selected general questions; cannot justify universal fixed watering schedules. |
-| Plant-specific care comparisons | Correctly associated named-plant profiles covering comparable care attributes | 0/5 chunks provide complete profiles supporting such comparisons. S02 was deferred because headings/bodies extract ambiguously. Incidental plant examples elsewhere are not comparison-ready profiles. | FR1 plant comparisons could be unanswerable or tempt unsupported generalisation; later test-set coverage must reflect this gap. |
+| General indoor conditions | Light, water and space principles | 1/5: S01-p05-0001 covers all three, without plant-specific schedules. | Supports selected general questions; cannot justify universal watering intervals. |
+| Plant-specific comparisons | Correctly linked named-plant profiles with comparable care attributes | 0/5 complete comparison-ready profiles; S02 is deferred. Incidental species/group examples are not full profiles. | Comparisons may be unanswerable or encourage unsupported generalisation. |
 
-Other observed content: three chunks discuss growing media/soil; one gives general plant-choice advice. S03-p06-0005 omits the visible ratio table, so ratio-based questions are not supported. Categories are task-focused evidence groups, not class-balance or fairness scores.
+The other records provide three media/soil chunks and one plant-choice chunk. S03-p06-0005 lacks the source's soil-ratio table. Counts describe the prepared pilot only, not all information in NParks sources.
 
 ## 5. Bias Assessment
 
-**Inferred risk - pipeline-induced and representation bias:** manual selection admits easy-to-extract general prose while deferring complex species profiles and omitting the soil table. This can skew the prepared collection toward general advice and away from concrete comparisons/structured guidance. Later retrieval might surface generic passages for species-specific questions, and generation might overgeneralise if it does not acknowledge missing evidence.
+**Inferred pipeline-induced/representation risk:** selecting easily extracted prose while deferring complex profiles and omitting a table skews evidence toward general advice. The chain is: **selection/layout loss → missing profiles and ratios → potentially generic or unsupported retrieval/generated answers → coverage review and controlled admission**. Review source layouts and authorised alternatives, maintain task-to-evidence mappings, and later test abstention on unsupported questions. This is a plausible risk, not observed model behaviour or proven unfairness. Five chunks without user/model results cannot establish demographic fairness.
 
-**Evidence chain:** documented S02 extraction limitation and S03 table loss → 0/5 comparison-ready profiles and omitted ratios → possible unsupported/uneven answers across FR1 tasks → verify layout associations, admit reviewed content only when use is authorised, maintain a coverage register, and test unsupported-question abstention before user-facing use. This is a plausible downstream risk, not observed model behaviour or demonstrated unfairness. No demographic fairness claim can be made from five text chunks without users, labels or model evaluation.
+<!-- pagebreak -->
 
 ## 6. Privacy, Rights and Governance
 
-**B3 review, 22 November 2026:**
+**Provenance/version - Observed:** NParks S01/S03 ownership, URLs, selected pages and fingerprints map to the exact Part C output. **N.V.:** authoritative revision dates and current-edition status. A matching hash proves snapshot identity, not truth or currency.
 
-| Topic | Finding / status | Safeguard or responsibility |
-|---|---|---|
-| Provenance/version | **Observed:** NParks sources S01/S03, exact filenames/URLs/hashes and selected pages map to the audited Part C output; fingerprints match. **N.V.:** authoritative publication/revision dates and latest-edition status. | Student maintainer records verified dates when available; revalidates on source/configuration change instead of treating download date as freshness. |
-| Rights | **Observed:** official [Terms of Use](https://gardeningsg.nparks.gov.sg/terms-of-use/), page dated 26 June 2026, reviewed on audit date, reserve rights and describe limited personal non-commercial use. The terms also restrict other use and automated copying. **N.V.:** permission covering the intended AI processing/service and redistribution. No written authorisation is held in this repository. | Do not treat public access as an open licence or the audit as permission. Resolve intended-use permission with the rights holder, or choose appropriately licensed alternatives, before further acquisition/expansion or downstream use. No contact was sent as part of this review. |
-| Privacy | **Observed:** manual review of all five prepared prose records found no personal identifiers, private user messages or sensitive individual records. This conclusion does not cover every raw-PDF element or future user input. | Keep raw PDFs, extracted text and source renderings local/ignored; share original observations and metadata only. Review any future source or user-data additions separately. |
-| Consent/collection basis | No human participants or user data are represented in the five chunks, so participant consent is not applicable to this sample. Public-document access does not settle copyright or intended-use permission. | Preserve provenance and notices; resolve rights separately rather than claiming consent from availability. |
-| Maintenance | Student project owner is the responsible maintainer; NParks is the source publisher, not PlantPal's quality reviewer. | Review before corpus expansion or downstream evaluation and when sources, terms, parsing settings, requirements or reported errors change; version corrected outputs and rerun checks. |
+**Rights - Observed:** the official [NParks terms](https://gardeningsg.nparks.gov.sg/terms-of-use/), stated update 26 June 2026, were reviewed on 22 November 2026. They reserve rights, describe limited personal non-commercial use and restrict other use and automated copying. **N.V.:** authorisation for the intended AI processing/service or redistribution; no written permission is recorded. Public availability and prior local execution do not establish that permission. This is an engineering access review, not a legal determination.
 
-The terms review informs a conservative engineering gate, not a legal determination. Earlier local pipeline execution is not proof of authorisation for broader use. Raw sources and full extracted text have not been newly published during this audit.
+**Privacy/collection - Observed:** manual review found no personal identifiers, private user messages or sensitive individual records in the five prepared chunks. This does not cover every raw-PDF element or future inputs. Participant consent is not applicable to these public-document prose records; copyright/intended-use permission is a separate unresolved question.
+
+**Safeguards and owner:** the student project owner maintains the register, preserves notices and keeps source PDFs, extracted text and page images local/ignored. Publish only permitted evidence. Resolve rights before further acquisition/expansion or downstream use; no permission request was sent during this audit. Revalidate when sources, terms, configuration, requirements or reported errors change, and before downstream evaluation. NParks is the publisher, not PlantPal's quality reviewer.
 
 ## 7. Mitigation and Impact on Requirements
 
-**B4 priorities:** proposed actions, not completed remediation.
+| Priority / owner / timing | Action and evidence required | Impact and residual risk |
+|---|---|---|
+| 1. Student maintainer; before further acquisition/expansion or downstream AI use | Document permission covering intended processing/sharing, or select suitably licensed replacements. Verify source dates/versions and establish a justified freshness-review trigger. | FR1 approved evidence and FR2 provenance depend on admissible sources. Permission does not establish accuracy. |
+| 2. Student maintainer; after rights resolution, before claiming comparisons/ratios | Verify plant-profile layout and structured soil guidance, or use authorised substitutes. Build task-to-evidence mappings; rerun V1/V2 and version the resulting manifest. | FR1/FR2, NFR2 correctness and RAI1 grounding/abstention evaluation are affected. Manual errors, source bias and later model errors can remain. |
 
-| Priority | Action, owner and timing | Requirements/evaluation affected | Evidence needed and residual risk |
-|---|---|---|---|
-| 1 - Resolve rights and source currency | Student project owner documents permission for the intended processing/sharing scope, or selects suitably licensed replacements, **before further acquisition/expansion or downstream AI use**. Verify publication/revision information and agree a task-based freshness review trigger. | FR1 approved-source availability; FR2 traceable provenance; later answer/citation evaluation depends on an admissible corpus. | Written permission or applicable licence covering intended use, source register and verified versions (or explicitly justified remaining uncertainty). Permission alone does not prove accuracy. |
-| 2 - Repair task coverage and verify source fidelity | After rights resolution, student maintainer reviews plant-profile layout and structured soil guidance, or substitutes authorised sources. Build a task-to-evidence coverage list and rerun V1/V2 **before claiming support for comparisons or ratios**. | FR1 comparisons; FR2 citation support; NFR2 correctness and RAI1 grounding/abstention evaluation could otherwise be distorted by unanswerable test cases. | Reviewed profile/attribute mappings and table values, revised manifest and actual rule results; later answerable/unsupported cases explicitly distinguished. Source bias and model/retrieval errors may remain. |
-
-Residual risks include a small single-publisher corpus, manual review error, missing source revisions, unresolved semantic redundancy and untested retrieval/generation. No Week 2 application metric has been achieved merely by passing data checks.
+These are proposed actions, not completed remediation. Remaining risks include limited single-publisher coverage, unverified revisions, semantic redundancy and untested retrieval/generation. No Topic 2 application threshold is achieved by these data checks alone.
 
 ## 8. Quality-Gate Decision
 
-**HOLD — promotion of this five-chunk NParks pilot to the intended PlantPal downstream answer corpus/public AI service.** This gate is scoped to downstream dataset use, not a claim that the coursework audit or pipeline execution failed.
+**HOLD: promotion of this five-chunk pilot to the intended PlantPal downstream answer corpus/public AI service.** V1/V2 pass 5/5, but intended-use permission remains N.V.; comparison-ready profiles are absent, the soil table is missing and currency is unverified. Structural quality does not resolve these blockers.
 
-Evidence supporting the decision:
+Do not promote the pilot, redistribute full extracted text or claim complete FR1 support while on HOLD. The metadata-only audit and proposal can document the findings; this gate does not invalidate completed pipeline/audit work or prevent report submission.
 
-1. **Observed:** V1 and V2 pass 5/5; prepared text is traceable and faithful within its selected scope. These checks do not resolve usage permission or missing tasks.
-2. **Not Verified:** permission for intended downstream AI use is unresolved; publicly downloadable content is not established as openly licensed.
-3. **Observed:** 0/5 comparison-ready profiles, S02 deferred and S03's table missing; the pilot cannot support the full FR1 task range. Source currency is also not verified.
+**Re-review requires:** documented applicable permission or authorised replacements; reviewed evidence for supported tasks or an explicitly agreed narrower scope; justified source-version/freshness handling; and revised manifests with passing V1/V2 results. Then select a new scoped gate from the evidence. New source/configuration changes or reported errors also trigger revalidation.
 
-The two priorities in Section 7 must be addressed before re-review. Do not promote the pilot, publish full source-derived text or claim complete FR1 support while on HOLD. The metadata-only audit and proposal may still document these actual findings; Part C report/PDF preparation can proceed without lifting this dataset gate.
+<!-- pagebreak -->
 
-**Re-review triggers:** documented intended-use permission or authorised replacement sources; reviewed evidence for the proposed supported tasks (or an explicitly agreed narrower scope); verified source/version status with a justified maintenance plan; new manifests and passing V1/V2 checks for the revised artifact. Source/configuration changes or newly reported errors trigger revalidation. Only then select a new scoped GO / GO WITH CONDITIONS / HOLD decision from the evidence.
+## Appendix A - Supporting Evidence and Traceability
 
-**Part C remains pending:** concise final report, PDF export for eLearning, final README/repository verification and submission. This intermediate Part B commit is not an eLearning submission.
+Main report: three pages. This appendix is supporting evidence, not additional audit scope. Full source text and source-page images are not reproduced.
 
-Lab basis: Topic 4 Lab, A1-A3 pp. 3-4, B1-B4 pp. 5-6, report headings p. 7. Public supporting evidence contains metadata and original observations only.
+| Record | Source/page | Characters | Manual-review observation |
+|---|---|---:|---|
+| S01-p05-0001 | S01 p5 | 466 | Space/light/water prose retains associated headings. |
+| S01-p05-0002 | S01 p5 | 166 | Complete plant-choice section; short length accepted. |
+| S01-p10-0003 | S01 p10 | 656 | Complete media section; documented soft-target exception. |
+| S01-p10-0004 | S01 p10 | 307 | Charcoal/coco-chip descriptions retain their own headings. |
+| S03-p06-0005 | S03 p6 | 399 | Definitions/prose preserved with documented order change; table absent. |
+
+**Inspected output SHA-256:**
+
+`66f82bdf2112360c8f4f1f7e5aba86e63951280e6aa2bd067e4d8a6221181204`
+
+**Evidence index (repository-relative paths):**
+
+- [Week 2 requirements](week2_requirements.md) and [evaluation criteria](week2_evaluation_criteria.md): original FR1/FR2 and later NFR2/RAI1 targets.
+- [Source inventory](week3_data_inventory.md): source URLs, owners, PDF metadata, access history and source SHA-256 values.
+- [Pipeline decisions](week3_pipeline_decisions.md): selected pages, cleanup, chunking and accepted limitations.
+- [Part C manifest](../data/pipeline_v1/documents/pipeline_manifest.json): exact run, configuration, source/output hashes and mappings.
+- [Part A inspection](../data/inspection/week4_part_a_inspection.json): population, fields, schema, duplicate checks and manual-review scope.
+- [Part B validation](../data/inspection/week4_part_b_validation.json): per-record V1/V2 results, coverage, rights review and scoped gate.
+- [Topic 3 notebook](../notebooks/week3_pipeline.ipynb): source register and actual pipeline execution; not rerun for this audit.
+
+**Source documents:** NParks S01, *Introduction to Indoor Gardening* (PDF pp. 5, 10); S03, *Introduction to Community Gardening* (PDF p. 6). Official download URLs are recorded in the inventory and manifest. Rendered-page fidelity review: 22 November 2026. S02, *Know 10 Houseplants*, is inspected but not admitted to this pilot.
+
+**Assignment basis:** Topic 4 Lab, pp. 3-4 (A1-A3), pp. 5-6 (B1-B4), pp. 7-8 (report and submission). The provided lab requires one eight-section report, a PDF copy and an updated repository; no new pipeline is required.
+
+**Submission:** [GitHub repository](https://github.com/Pokeepic/ai-engineering-plantpal). Final Markdown and PDF are prepared; eLearning upload is pending. GitHub upload is not an eLearning submission.
