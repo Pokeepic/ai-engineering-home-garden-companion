@@ -1,4 +1,4 @@
-# PlantPal - Home Gardening Assistant
+# Home Garden Companion: An AI Assistant for Tropical Gardening
 
 > A planned AI assistant that answers beginner home-gardening questions using official gardening documents and verifiable citations.
 
@@ -6,7 +6,7 @@
 
 ## Problem Statement
 
-Beginner home gardeners need to relate plant-care guidance to their available light, space, and growing conditions. Relevant material is distributed across guides and plant resources. PlantPal will retrieve supporting passages and explain them in plain language, ask for missing context, and acknowledge when the documents cannot answer a question.
+Beginner home gardeners need to relate plant-care guidance to their available light, space, and growing conditions. Relevant material is distributed across guides and plant resources. Home Garden Companion will retrieve supporting passages and explain them in plain language, ask for missing context, and acknowledge when the documents cannot answer a question.
 
 ## Evidence of the Problem
 
@@ -18,7 +18,7 @@ These sources support the gardening context; chatbot demand and effectiveness re
 ## Initial Related Work / Existing Approaches
 
 - [NParks gardening guides](https://gardeningsg.nparks.gov.sg/learn-more-about-gardening/downloads/): authoritative references, but users must locate and combine information themselves.
-- [NParks Plant Suggestions](https://gardeningsg.nparks.gov.sg/new-to-gardening/plant-suggestions/): condition-based plant selection; PlantPal proposes complementary conversational care explanations.
+- [NParks Plant Suggestions](https://gardeningsg.nparks.gov.sg/new-to-gardening/plant-suggestions/): condition-based plant selection; Home Garden Companion proposes complementary conversational care explanations.
 - [Lewis et al. (2020), Retrieval-Augmented Generation](https://arxiv.org/abs/2005.11401): a relevant technical foundation whose results do not establish performance for this gardening use case.
 
 ## Engineering Gap / Limitation
@@ -66,7 +66,7 @@ evaluation/   Future evaluation questions and results
 prompts/      Future versioned prompts
 ```
 
-The [ChatGPT system map](docs/week1_system_map.png) and [observation sheet](docs/week1_observation_sheet.md) are Part A/B group work about an existing system. They are not PlantPal's architecture or test results. The [group reflections](docs/group_reflections.md) contain the supplied Part A and Part B reflections.
+The [ChatGPT system map](docs/week1_system_map.png) and [observation sheet](docs/week1_observation_sheet.md) are Part A/B group work about an existing system. They are not Home Garden Companion's architecture or test results. The [group reflections](docs/group_reflections.md) contain the supplied Part A and Part B reflections.
 
 ## Weekly Progress
 

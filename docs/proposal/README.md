@@ -1,4 +1,4 @@
-# PlantPal proposal package
+# Home Garden Companion proposal package
 
 RAQIB HAZIM BIN ABDUL HAMID · A24AI0118 · SECTION 3
 
@@ -17,3 +17,5 @@ The report distinguishes executed preparation/audit results from future applicat
 The earlier `plantpal_proposal_draft.*` files are retained as the first draft. Use `plantpal_proposal_report.pdf` for the current report. The presentation content remains consistent with the report.
 
 The final presentation and speaking notes match the structured report, including its reference numbers, requirements, proposed targets, data findings and implementation stages. The notes include a seven-minute timing plan, report-section mapping and Q&A preparation. `plantpal_presentation_draft.pdf` is the earlier version.
+
+The current project title is **Home Garden Companion: An AI Assistant for Tropical Gardening**. The existing repository URL and filenames are retained for link compatibility. Earlier weekly artifacts and draft files use the former project name. The report cover follows the supplied UTM template and includes the confirmed student and lecturer details.

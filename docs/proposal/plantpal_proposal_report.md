@@ -1,18 +1,21 @@
-# PlantPal Project Proposal
+# Home Garden Companion: An AI Assistant for Tropical Gardening — Project Proposal
 
 RAQIB HAZIM BIN ABDUL HAMID | A24AI0118 | SECTION 3
 
+**Year / Course:** 3 / SAIAH · **Semester:** 1 · **Section:** 3
+
+**Lecturer:** DR HAZLIFAH BINTI MOHD RUSLI
 22 November 2026
 
 ## 1 Problem Definition and Project Scope
 
 ### 1.1 Background and Problem Statement
 
-PlantPal is proposed for beginner gardeners who need to relate general plant-care information to the conditions in their own indoor or balcony spaces. A question about watering may depend on plant identity, light, growing medium and the available evidence. A useful assistant therefore needs to identify when information is missing, retrieve relevant guidance and show the source rather than present a confident but unsupported instruction.
+Home Garden Companion is proposed for beginner gardeners who need to relate general plant-care information to the conditions in their own indoor or balcony spaces. A question about watering may depend on plant identity, light, growing medium and the available evidence. A useful assistant therefore needs to identify when information is missing, retrieve relevant guidance and show the source rather than present a confident but unsupported instruction.
 
-NParks explains that plants should fit their growing environment and identifies light, water, space and soil as important considerations [1]. Its indoor gardening guide presents space, light, water and plant choice together on PDF page 5 [2]. These sources support the practical importance of context-sensitive gardening information. They do not establish how many users want a chatbot, how often beginners fail to find information, or whether PlantPal would improve plant survival. No survey, interview or user-outcome evidence has been collected.
+NParks explains that plants should fit their growing environment and identifies light, water, space and soil as important considerations [1]. Its indoor gardening guide presents space, light, water and plant choice together on PDF page 5 [2]. These sources support the practical importance of context-sensitive gardening information. They do not establish how many users want a chatbot, how often beginners fail to find information, or whether Home Garden Companion would improve plant survival. No survey, interview or user-outcome evidence has been collected.
 
-The proposed engineering problem is to connect a beginner’s natural-language question with a concise explanation that remains traceable to reviewed gardening documents. Users can already read official guides or search them directly. PlantPal must justify its additional complexity through evaluation against keyword search over the same approved collection. An explanation that sounds helpful but cannot be verified would not satisfy the project.
+The proposed engineering problem is to connect a beginner’s natural-language question with a concise explanation that remains traceable to reviewed gardening documents. Users can already read official guides or search them directly. Home Garden Companion must justify its additional complexity through evaluation against keyword search over the same approved collection. An explanation that sounds helpful but cannot be verified would not satisfy the project.
 
 AI is appropriate to investigate because questions can be phrased in different ways and may require combining passages. However, language generation is not itself evidence. The design separates access to documents from answer generation and includes clarification, abstention and scope controls. The intended benefit is easier access to supported guidance, not automatic diagnosis or a guarantee of gardening outcomes.
 
@@ -22,9 +25,9 @@ The project is at proposal stage. Requirements and a conceptual architecture are
 
 Official NParks guides and its plant-selection resources provide an existing information route [1–4]. Their strength is direct access to published horticultural guidance. A reader must still find relevant sections and relate them to a question. Our inspection also found that visual layouts can carry information that plain PDF extraction loses. This is a preparation limitation of our method, not proof that the source documents are poor.
 
-Lewis et al. introduced retrieval-augmented generation that combines a parametric language model with retrieved external memory [5]. The research motivates considering external evidence alongside generation. PlantPal does not reproduce the paper’s training method or benchmarks. Its practical use of retrieved gardening passages must be evaluated independently, especially when the available collection is small or incomplete.
+Lewis et al. introduced retrieval-augmented generation that combines a parametric language model with retrieved external memory [5]. The research motivates considering external evidence alongside generation. Home Garden Companion does not reproduce the paper’s training method or benchmarks. Its practical use of retrieved gardening passages must be evaluated independently, especially when the available collection is small or incomplete.
 
-Gao et al. introduced ALCE to evaluate generated answers with citations, including correctness and citation quality [6]. This informs the decision to score whether a reference exists separately from whether its passage supports the associated claim. PlantPal will use manual claim-level checks appropriate to its limited prototype. A citation-looking string or a valid PDF page number alone will not count as supported evidence.
+Gao et al. introduced ALCE to evaluate generated answers with citations, including correctness and citation quality [6]. This informs the decision to score whether a reference exists separately from whether its passage supports the associated claim. Home Garden Companion will use manual claim-level checks appropriate to its limited prototype. A citation-looking string or a valid PDF page number alone will not count as supported evidence.
 
 Liu et al. found that performance on their long-context tasks can depend on where relevant information appears [7]. This motivates testing selective context rather than assuming that placing all documents into a prompt is sufficient. It is not evidence that a particular chunk length or retriever is optimal for gardening. Those choices remain engineering hypotheses.
 
@@ -112,9 +115,9 @@ The diagram is conceptual: boxes represent responsibilities, not separate deploy
 
 Alternative paths matter as much as the normal answer. Essential missing context leads to clarification. Insufficient evidence leads to abstention. Excluded requests lead to refusal. Dependency failures should return clear errors rather than invented answers. Exact methods for identifier detection and semantic claim checking will require experiments and failure analysis.
 
-![PlantPal architecture](../week2_architecture_v1.png)
+![Home Garden Companion architecture](../week2_architecture_v1.png)
 
-Figure 1. PlantPal conceptual architecture, created for Week 2 [11]. Application components remain proposed.
+Figure 1. Home Garden Companion conceptual architecture, created for Week 2 [11]. Application components remain proposed.
 
 ### 4.2 Design Decisions and Trade Offs
 
@@ -154,7 +157,7 @@ The workflow expands the data component of Week 2 rather than replacing the over
 
 ![Preparation pipeline](../week3_pipeline_diagram.png)
 
-Figure 2. PlantPal preparation pipeline, created and executed for Week 3 [12, 13]. This pipeline prepares data for A5.
+Figure 2. Home Garden Companion preparation pipeline, created and executed for Week 3 [12, 13]. This pipeline prepares data for A5.
 
 ### 5.3 Quality Findings Risks and Mitigations
 
@@ -186,7 +189,7 @@ The expected contribution is a traceable specification, justified architecture, 
 
 ### 6.2 Conclusion
 
-PlantPal will be evaluated as a bounded, evidence-based alternative to keyword search. The preparation pilot identifies the permission and coverage gaps that must be resolved before application testing. Subsequent work will retain traceability from requirements to source evidence and measured outcomes.
+Home Garden Companion will be evaluated as a bounded, evidence-based alternative to keyword search. The preparation pilot identifies the permission and coverage gaps that must be resolved before application testing. Subsequent work will retain traceability from requirements to source evidence and measured outcomes.
 
 ## References
 
@@ -208,16 +211,16 @@ PlantPal will be evaluated as a bounded, evidence-based alternative to keyword s
 
 ## Project evidence references
 
-[9] PlantPal project repository. Week 2 requirements, version 1.1, 26 October 2026. docs/week2_requirements.md.
+[9] Home Garden Companion project repository. Week 2 requirements, version 1.1, 26 October 2026. docs/week2_requirements.md.
 
-[10] PlantPal project repository. Week 2 evaluation criteria. docs/week2_evaluation_criteria.md.
+[10] Home Garden Companion project repository. Week 2 evaluation criteria. docs/week2_evaluation_criteria.md.
 
-[11] PlantPal project repository. Week 2 architecture decisions and traceability. docs/week2_architecture_decisions.md.
+[11] Home Garden Companion project repository. Week 2 architecture decisions and traceability. docs/week2_architecture_decisions.md.
 
-[12] PlantPal project repository. Week 3 data inventory and pipeline decisions. docs/week3_data_inventory.md; docs/week3_pipeline_decisions.md.
+[12] Home Garden Companion project repository. Week 3 data inventory and pipeline decisions. docs/week3_data_inventory.md; docs/week3_pipeline_decisions.md.
 
-[13] PlantPal project repository. Executed notebook and Part C validation. notebooks/week3_pipeline.ipynb; data/inspection/week3_part_c_validation.json; data/pipeline_v1/documents/pipeline_manifest.json.
+[13] Home Garden Companion project repository. Executed notebook and Part C validation. notebooks/week3_pipeline.ipynb; data/inspection/week3_part_c_validation.json; data/pipeline_v1/documents/pipeline_manifest.json.
 
-[14] PlantPal project repository. Week 4 Data Quality & Bias Report, 22 November 2026. docs/week4_data_quality_report.md; data/inspection/week4_part_b_validation.json.
+[14] Home Garden Companion project repository. Week 4 Data Quality & Bias Report, 22 November 2026. docs/week4_data_quality_report.md; data/inspection/week4_part_b_validation.json.
 
 Repository for [9]–[14]: https://github.com/Pokeepic/ai-engineering-plantpal . These are author-created project artifacts and execution evidence, not independent research studies.

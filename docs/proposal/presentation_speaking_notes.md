@@ -1,19 +1,19 @@
-# PlantPal proposal speaking notes
+# Home Garden Companion: An AI Assistant for Tropical Gardening — Speaking Notes
 
 **Presenter:** RAQIB HAZIM BIN ABDUL HAMID, A24AI0118, SECTION 3.
 **Finalised against the structured proposal report:** 22 November 2026. Ten slides: title, eight content slides, references. Planned timing totals 7 minutes, followed by 3 minutes of Q&A. Rehearse and adjust to your speaking pace; this is a timing plan, not a recorded rehearsal.
 
-## Slide 1 - PlantPal (10 seconds)
+## Slide 1 - Home Garden Companion (10 seconds)
 
-My proposal is PlantPal, a document-grounded home gardening assistant. I will explain its intended behaviour, the preparation work completed, and the conditions that must be resolved before downstream implementation.
+My project is Home Garden Companion, an AI assistant for tropical gardening. I will explain its intended behaviour, the preparation work completed, and the conditions that must be resolved before downstream implementation.
 
 ## Slide 2 - The problem (45 seconds)
 
-Beginner gardeners must connect information about light, water, growing media and available space. NParks identifies these environmental conditions as important when choosing and growing plants. PlantPal proposes to help users ask questions in ordinary English and receive an explanation linked to source pages. The engineering problem is keeping that explanation connected to evidence and recognising when context is missing. I have not yet surveyed users, so I am not claiming demonstrated chatbot demand or better plant survival. Official guides already exist. The proposed value is easier access to supported information, which still needs evaluation.
+Beginner gardeners must connect information about light, water, growing media and available space. NParks identifies these environmental conditions as important when choosing and growing plants. Home Garden Companion proposes to help users ask questions in ordinary English and receive an explanation linked to source pages. The engineering problem is keeping that explanation connected to evidence and recognising when context is missing. I have not yet surveyed users, so I am not claiming demonstrated chatbot demand or better plant survival. Official guides already exist. The proposed value is easier access to supported information, which still needs evaluation.
 
 ## Slide 3 - Research and engineering gap (45 seconds)
 
-Three research directions inform the design. Lewis and colleagues motivate combining retrieval with generation. Gao and colleagues show why citation quality needs its own evaluation. Liu and colleagues demonstrate that long-context use is not automatically reliable in their tasks. These findings support investigating retrieved evidence and checking claims, but they do not prove PlantPal will work. My engineering gap is a bounded integration of source access, citations, clarification and coverage limits for beginner gardening. I will compare it with keyword search over the same approved collection rather than assume that adding a language model is an improvement.
+Three research directions inform the design. Lewis and colleagues motivate combining retrieval with generation. Gao and colleagues show why citation quality needs its own evaluation. Liu and colleagues demonstrate that long-context use is not automatically reliable in their tasks. These findings support investigating retrieved evidence and checking claims, but they do not prove Home Garden Companion will work. My engineering gap is a bounded integration of source access, citations, clarification and coverage limits for beginner gardening. I will compare it with keyword search over the same approved collection rather than assume that adding a language model is an improvement.
 
 ## Slide 4 - Scope and objectives (45 seconds)
 
@@ -91,16 +91,16 @@ The report contains full research references and links to the project evidence. 
 
 ## Project evidence references
 
-[9] PlantPal project repository. Week 2 requirements, version 1.1, 26 October 2026. docs/week2_requirements.md.
+[9] Home Garden Companion project repository. Week 2 requirements, version 1.1, 26 October 2026. docs/week2_requirements.md.
 
-[10] PlantPal project repository. Week 2 evaluation criteria. docs/week2_evaluation_criteria.md.
+[10] Home Garden Companion project repository. Week 2 evaluation criteria. docs/week2_evaluation_criteria.md.
 
-[11] PlantPal project repository. Week 2 architecture decisions and traceability. docs/week2_architecture_decisions.md.
+[11] Home Garden Companion project repository. Week 2 architecture decisions and traceability. docs/week2_architecture_decisions.md.
 
-[12] PlantPal project repository. Week 3 data inventory and pipeline decisions. docs/week3_data_inventory.md; docs/week3_pipeline_decisions.md.
+[12] Home Garden Companion project repository. Week 3 data inventory and pipeline decisions. docs/week3_data_inventory.md; docs/week3_pipeline_decisions.md.
 
-[13] PlantPal project repository. Executed notebook and Part C validation. notebooks/week3_pipeline.ipynb; data/inspection/week3_part_c_validation.json; data/pipeline_v1/documents/pipeline_manifest.json.
+[13] Home Garden Companion project repository. Executed notebook and Part C validation. notebooks/week3_pipeline.ipynb; data/inspection/week3_part_c_validation.json; data/pipeline_v1/documents/pipeline_manifest.json.
 
-[14] PlantPal project repository. Week 4 Data Quality & Bias Report, 22 November 2026. docs/week4_data_quality_report.md; data/inspection/week4_part_b_validation.json.
+[14] Home Garden Companion project repository. Week 4 Data Quality & Bias Report, 22 November 2026. docs/week4_data_quality_report.md; data/inspection/week4_part_b_validation.json.
 
 Repository for [9]–[14]: https://github.com/Pokeepic/ai-engineering-plantpal . These are author-created project artifacts and execution evidence, not independent research studies.
