@@ -20,7 +20,7 @@ Imagine bringing home your first plant. You find a place for it. You want to tak
 
 Before I give you an answer, I need to know what “it” is. What plant? What conditions?
 
-NParks connects plant choice with light, water, space and soil. The guidance exists. But the beginner still has to find the right passage and work out whether it applies.
+Gardening guides already explain light, watering and soil. But the beginner still has to find the right advice and work out whether it applies to their plant.
 
 That moment, between finding information and knowing what to do with it, is where this project begins.
 
@@ -66,17 +66,17 @@ That comparison will tell me whether the extra conversation is worth it.
 
 ## Slide 6 — How the answer would be built (55 seconds)
 
-Behind that conversation is a short chain of responsibilities.
+Here’s what would happen behind the scenes.
 
 [Trace the diagram from left to right.]
 
-Check the question. Retrieve relevant passages. Draft an explanation. Check its support before showing it.
+The assistant checks the question first. If something important is missing, it asks you. Then it searches the gardening documents for the relevant information and uses those passages to draft an answer.
 
-Lewis and colleagues provide the retrieval-and-generation foundation. Gao and colleagues show why answer correctness and citation quality need separate evaluation. Liu and colleagues show that the position of evidence in a long context can affect performance, so simply adding more text is not enough.
+Before showing it, there’s another check: does the evidence actually support what the answer says? A link to a real document isn’t enough if that document says something different.
 
-The engineering work is bringing those ideas together with clarification and response limits.
+If there isn’t enough evidence, the assistant should say so. If the question is outside its scope, it should explain that limit.
 
-Retrieval adds work and latency. Temporary context limits personalisation. One generation step gives less opportunity to repair a draft. Those are the initial trade-offs, and testing will determine which choices need to change.
+For the first version, I’m keeping this process simple: temporary conversation context and one draft per answer. Searching and checking will take time, so I’ll test whether the extra steps still give users a reasonable response time.
 
 ## Slide 7 — Five passages, checked carefully (55 seconds)
 
@@ -118,7 +118,7 @@ That is what Home Garden Companion will be tested on.
 
 ## Slide 10 — References (10 seconds)
 
-Thank you. These are the research and project sources behind the proposal. I’m happy to take your questions.
+Thank you. I’m happy to take your questions.
 
 ## Q&A preparation
 
@@ -155,7 +155,7 @@ Timing checkpoints: 0:30, 1:10, 2:00, 2:40, 3:40, 4:35, 5:30, 6:10, 6:50, 7:00. 
 
 Presentation reference: Steve Jobs Archive, “Speech at Macworld” (2007), https://book.stevejobsarchive.com/#speech-at-macworld. Used for pacing and the sequence of problem, reveal and explanation, not as evidence for the gardening project. The script is original.
 
-## References matching the report
+## References — for checking, not spoken
 
 [1] National Parks Board. Choosing Plants. GardeningSG, 17 July 2023. https://gardeningsg.nparks.gov.sg/gardening-resource-library/choosing-plants/ (accessed 22 November 2026).
 
