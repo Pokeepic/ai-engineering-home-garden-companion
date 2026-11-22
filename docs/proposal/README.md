@@ -2,15 +2,15 @@
 
 RAQIB HAZIM BIN ABDUL HAMID · A24AI0118 · SECTION 3
 
-Updated 22 November 2026. The current report incorporates the author’s uploaded Word revision, preserved unchanged. Its PDF and Markdown copies reflect that revision. The main body is now 20 pages, exceeding the lecturer’s 10–15-page limit. The slides and speaking notes have been rebuilt around a beginner’s question, an illustrative proposed interaction and the evidence needed to evaluate it. Technical counts and targets follow the weekly requirements and audit records.
+Updated 22 November 2026. The current report incorporates the author’s uploaded Word revision, preserved unchanged. Its PDF and Markdown copies reflect that revision. The main body is now 20 pages, exceeding the lecturer’s 10–15-page limit. The revised slides and speaking notes cover the lecturer’s six components, including functional and responsible AI requirements, evaluation methods, architecture decisions, named data sources, preparation steps and quality findings. Technical counts and targets follow the weekly requirements and audit records.
 
 - [Current proposal PDF](home_garden_companion_proposal_report.pdf): cover, contents, 20 main pages and two reference pages.
 - [Editable Word report](home_garden_companion_proposal_report.docx)
 - [Markdown report](home_garden_companion_proposal_report.md)
-- [Final presentation PDF](home_garden_companion_presentation.pdf): title, eight content slides and references in a new minimal design, with numbered objectives and a comparison against keyword search. The live deck retains an editable architecture diagram and pilot comparison table.
+- [Final presentation PDF](home_garden_companion_presentation.pdf): title, eight content slides and references, with numbered objectives, requirement and evaluation tables, component-level architecture, the data pipeline and completed pilot evidence. Tables and diagrams are editable in the live deck.
 - [Seven-minute speaking notes and Q&A](presentation_speaking_notes.md)
 
-The presentation PDF is a visual copy of the reviewed slides; text is not selectable. The [editable presentation](https://chatgpt.com/space/page_7b24a4a3bf708191abc975e29286a001) is saved in the author's connected Spaces account, with the updated seven-minute script embedded in all ten slides. The public PDF is available here without that account.
+The presentation PDF is a visual copy of the reviewed slides; text is not selectable. The [editable presentation](https://chatgpt.com/space/page_c739c6827e0c8191b1b4fb6bdd13b10a) is saved in the author's connected Spaces account, with the updated seven-minute script embedded in all ten slides. The public PDF is available here without that account.
 
 The report distinguishes executed preparation/audit results from future application targets. No deployed chatbot, user-study results or achieved model-evaluation targets are claimed. The downstream corpus-use HOLD remains documented. Review the wording and rehearse before submission. Course-portal submission is not completed by this repository upload.
 
