@@ -94,3 +94,7 @@ Parts A-C report preparation completed on 22 November 2026. Read the [final eigh
 All five prepared chunks were audited. [Part A evidence](data/inspection/week4_part_a_inspection.json) documents the five quality dimensions; [Part B evidence](data/inspection/week4_part_b_validation.json) records V1 source-reference checks and V2 source-fidelity review, each passing 5/5. **Quality gate: HOLD for promotion to the intended downstream answer corpus/service**, due to unresolved intended-use permission and incomplete task coverage. Resolve rights/source currency and verify comparison-ready content before re-review. This is a dataset-use gate, not an assignment failure.
 
 The final report and PDF are committed; **eLearning PDF upload remains pending**. Full source-derived text stays local. Colab execution and later application evaluation are not claimed.
+
+## Proposal draft
+
+The [proposal package](docs/proposal/README.md) contains the report PDF and editable Word version, the presentation PDF adapted from the supplied template, and seven-minute speaking notes with Q&A. It combines Topics 1–4 and distinguishes completed data preparation from planned application evaluation. Prepared for student review; course-portal submission remains pending.
