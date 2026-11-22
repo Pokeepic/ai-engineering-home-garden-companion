@@ -1,0 +1,75 @@
+{
+  "stage": "week4-part-a-inspection",
+  "audit_date": "2026-11-22",
+  "output": "data/pipeline_v1/documents/prepared_text.jsonl",
+  "manifest": "data/pipeline_v1/documents/pipeline_manifest.json",
+  "output_sha256": "66f82bdf2112360c8f4f1f7e5aba86e63951280e6aa2bd067e4d8a6221181204",
+  "output_matches_manifest": true,
+  "source_hashes_match_manifest": true,
+  "population": 5,
+  "sample_size": 5,
+  "inspection_unit": "prepared text chunk",
+  "selection": "All available records (census of selected pilot only)",
+  "records": [
+    {
+      "record_id": "S01-p05-0001",
+      "source_id": "S01",
+      "page": 5,
+      "characters": 466,
+      "required_fields_present": true,
+      "source_metadata_consistent": true,
+      "page_in_selected_range": true,
+      "same_schema": true
+    },
+    {
+      "record_id": "S01-p05-0002",
+      "source_id": "S01",
+      "page": 5,
+      "characters": 166,
+      "required_fields_present": true,
+      "source_metadata_consistent": true,
+      "page_in_selected_range": true,
+      "same_schema": true
+    },
+    {
+      "record_id": "S01-p10-0003",
+      "source_id": "S01",
+      "page": 10,
+      "characters": 656,
+      "required_fields_present": true,
+      "source_metadata_consistent": true,
+      "page_in_selected_range": true,
+      "same_schema": true
+    },
+    {
+      "record_id": "S01-p10-0004",
+      "source_id": "S01",
+      "page": 10,
+      "characters": 307,
+      "required_fields_present": true,
+      "source_metadata_consistent": true,
+      "page_in_selected_range": true,
+      "same_schema": true
+    },
+    {
+      "record_id": "S03-p06-0005",
+      "source_id": "S03",
+      "page": 6,
+      "characters": 399,
+      "required_fields_present": true,
+      "source_metadata_consistent": true,
+      "page_in_selected_range": true,
+      "same_schema": true
+    }
+  ],
+  "duplicate_ids_beyond_first": 0,
+  "duplicate_normalized_texts_beyond_first": 0,
+  "manual_review": {
+    "date": "2026-11-22",
+    "scope": "All five chunks against rendered S01 p5/p10 and S03 p6",
+    "observed": "Selected prose is faithful; documented whitespace/heading/order changes; S03 table absent; no invented table values. No apparent broken sentence or heading/body separation.",
+    "limit": "Source fidelity only, not independent horticultural correctness or complete extraction."
+  },
+  "timeliness": "N.V.: source publication/revision dates and domain freshness criterion not verified; pinned bytes do not prove current advice.",
+  "part_b_status": "Pending; V1/V2 formal findings and overall quality gate not recorded."
+}
