@@ -1,0 +1,119 @@
+{
+  "audit_date": "2026-11-22",
+  "stage": "week4-part-b",
+  "audited_output": "data/pipeline_v1/documents/prepared_text.jsonl",
+  "output_sha256": "66f82bdf2112360c8f4f1f7e5aba86e63951280e6aa2bd067e4d8a6221181204",
+  "sample_size": 5,
+  "method": "V1 executable checks against notebook register, actual PDFs and Part C manifest. V2 reused Part A visual review after confirming identical artifact/source fingerprints; not an automated semantic test.",
+  "records": [
+    {
+      "record_id": "S01-p05-0001",
+      "V1": "PASS",
+      "V1_checks": {
+        "required_fields": true,
+        "register_agreement": true,
+        "manifest_agreement": true,
+        "source_bytes_match": true,
+        "valid_page": true
+      },
+      "V2": "PASS",
+      "V2_basis": "Reused Part A manual comparison of this exact unchanged record with rendered source page; text non-empty, selected prose and heading association faithful."
+    },
+    {
+      "record_id": "S01-p05-0002",
+      "V1": "PASS",
+      "V1_checks": {
+        "required_fields": true,
+        "register_agreement": true,
+        "manifest_agreement": true,
+        "source_bytes_match": true,
+        "valid_page": true
+      },
+      "V2": "PASS",
+      "V2_basis": "Reused Part A manual comparison of this exact unchanged record with rendered source page; text non-empty, selected prose and heading association faithful."
+    },
+    {
+      "record_id": "S01-p10-0003",
+      "V1": "PASS",
+      "V1_checks": {
+        "required_fields": true,
+        "register_agreement": true,
+        "manifest_agreement": true,
+        "source_bytes_match": true,
+        "valid_page": true
+      },
+      "V2": "PASS",
+      "V2_basis": "Reused Part A manual comparison of this exact unchanged record with rendered source page; text non-empty, selected prose and heading association faithful."
+    },
+    {
+      "record_id": "S01-p10-0004",
+      "V1": "PASS",
+      "V1_checks": {
+        "required_fields": true,
+        "register_agreement": true,
+        "manifest_agreement": true,
+        "source_bytes_match": true,
+        "valid_page": true
+      },
+      "V2": "PASS",
+      "V2_basis": "Reused Part A manual comparison of this exact unchanged record with rendered source page; text non-empty, selected prose and heading association faithful."
+    },
+    {
+      "record_id": "S03-p06-0005",
+      "V1": "PASS",
+      "V1_checks": {
+        "required_fields": true,
+        "register_agreement": true,
+        "manifest_agreement": true,
+        "source_bytes_match": true,
+        "valid_page": true
+      },
+      "V2": "PASS",
+      "V2_basis": "Reused Part A manual comparison of this exact unchanged record with rendered source page; text non-empty, selected prose and heading association faithful."
+    }
+  ],
+  "rule_totals": {
+    "V1": {
+      "tested": 5,
+      "pass": 5,
+      "fail": 0,
+      "not_verified": 0
+    },
+    "V2": {
+      "tested": 5,
+      "pass": 5,
+      "fail": 0,
+      "not_verified": 0
+    }
+  },
+  "coverage": {
+    "general_light_water_space": {
+      "matching_record_ids": [
+        "S01-p05-0001"
+      ],
+      "inspected": 5,
+      "note": "General principles only; no plant-specific schedule."
+    },
+    "plant_specific_care_comparisons": {
+      "matching_record_ids": [],
+      "inspected": 5,
+      "note": "No complete named-plant care profiles supporting comparisons. Incidental orchids/epiphytes/cacti/yams mentions are not full profiles."
+    }
+  },
+  "privacy_review": "Manual review of all five prepared prose records found no personal identifiers or user conversations. Does not audit every raw PDF element or future user input.",
+  "rights_review": {
+    "url": "https://gardeningsg.nparks.gov.sg/terms-of-use/",
+    "checked_date": "2026-11-22",
+    "page_stated_update": "26 June 2026",
+    "status": "Permission for intended downstream AI processing/public service is Not Verified; no open redistribution licence established."
+  },
+  "quality_gate": {
+    "decision": "HOLD",
+    "scope": "Promotion of this five-chunk NParks pilot to the intended PlantPal downstream answer corpus/public AI service",
+    "reasons": [
+      "Unresolved permission for intended downstream use",
+      "No supported plant-specific comparisons; limited task coverage"
+    ],
+    "note": "Does not invalidate completed audit or pipeline checks. Metadata-only coursework documentation can be finalised; do not imply dataset approval."
+  }
+}

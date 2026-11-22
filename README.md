@@ -89,3 +89,7 @@ Part C integrates the same preparation into a reusable runner that re-reads the 
 ## Week 4 - Part A audit checkpoint
 
 [Data Quality & Bias Report](docs/week4_data_quality_report.md) is a working report with Part A (A1-A3) completed on 22 November 2026. All five existing Part C chunks were inspected; [metadata-only evidence](data/inspection/week4_part_a_inspection.json) records complete fields, consistent source metadata and no normalised-exact duplicates. Selected prose matches the source pages, but task coverage is limited and timeliness is Not Verified. Two validation rules are defined; formal Part B findings, risk review, quality-gate decision and Part C PDF submission remain pending.
+
+## Week 4 - Part B review and quality gate
+
+[Working audit report](docs/week4_data_quality_report.md): Parts A/B completed on 22 November 2026. [Formal validation evidence](data/inspection/week4_part_b_validation.json) records V1 source-reference checks and V2 source-fidelity review: each passed 5/5. **Quality gate: HOLD for promotion to the intended downstream PlantPal answer corpus/service**, because intended-use permission is unresolved and comparison-ready plant profiles are absent. Resolve rights/source currency and verify task coverage before re-review. Part C finalisation, PDF export and eLearning submission remain pending; no full extracted text was published.
